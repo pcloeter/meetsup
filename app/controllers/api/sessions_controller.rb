@@ -17,7 +17,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout
+    @user = current_user
+    if @user
+      logout
+      render json: {}
+    else
+      render json: ["You are not logged in"], status: 404
   end
 
 end
