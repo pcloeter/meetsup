@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-const Splash = (props) => {
+const Nav = (props) => {
     return (
       <div>
         <nav className="signup-login">
@@ -16,4 +16,4 @@ const Splash = (props) => {
 };
 
 
-export default Splash;
+export default Nav;

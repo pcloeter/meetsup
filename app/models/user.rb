@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  validates :username, presence: true, uniqueness: true
-  validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, presence: true, uniqueness: true
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   
 
@@ -13,9 +12,9 @@ class User < ApplicationRecord
   end
 
   def self.find_by_credentials(credentials)
-    user = User.find_by(username: credentials[:username])
+    user = User.find_by(email: credentials[:email])
     if user
-      return user if is_password?(credentials[:password])
+      return user if user.is_password?(credentials[:password])
     else
       return nil
     end
@@ -37,6 +36,6 @@ class User < ApplicationRecord
   end
 
   def ensure_session_token
-    return self.session_token ||= User.generate_sesssion_token
+    return self.session_token ||= User.generate_session_token
   end
 end

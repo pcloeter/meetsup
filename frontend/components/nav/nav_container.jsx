@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Splash from './splash';
+import Nav from './nav';
 
 const msp = (state) => {
   return { 
@@ -14,4 +14,4 @@ const mdp = (dispatch) => {
   }
 }
 
-export default connect(msp, mdp)(Splash);
+export default connect(msp, mdp)(Nav);

@@ -9,7 +9,7 @@ User.destroy_all
 
 
 user1 = User.create(
-  username: "Paul",
+  name: "Paul",
   password_digest: BCrypt::Password.create('hellothere'),
   email: 'number1@gmail.com',
   session_token: "12345",
@@ -18,7 +18,7 @@ user1 = User.create(
 )
 
 user2 = User.create(
-  username: "Sally",
+  name: "Sally",
   password_digest: BCrypt::Password.create('hellothere'),
   email: 'number2@gmail.com',
   session_token: "12345",
@@ -28,7 +28,7 @@ user2 = User.create(
 
 
 user3 = User.create(
-  username: "Jim",
+  name: "Jim",
   password_digest: BCrypt::Password.create('hellothere'),
   email: 'number3@gmail.com',
   session_token: "12345",

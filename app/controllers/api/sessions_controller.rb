@@ -1,14 +1,15 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
 
   def create
-    credentials = {username: params[:username], password: params[:password]}
+    credentials = {email: params[:user][:email], password: params[:user][:password]}
     
     @user = User.find_by_credentials(credentials)
+
     if @user
       login(@user)
-      render "api/users/#{user.id}"
+      render "api/users/show"
     else 
-      render json: ["Those are the wrong credentials"]
+      render json: ["Those are the wrong credentials"], status: 401
     end
 
   end
@@ -23,6 +24,7 @@ class SessionsController < ApplicationController
       render json: {}
     else
       render json: ["You are not logged in"], status: 404
+    end
   end
 
 end
