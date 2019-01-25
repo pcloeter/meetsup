@@ -6,7 +6,7 @@ const Nav = (props) => {
       <div className='navbar'>
 
       <div className='logo-container'>
-        <p className='logo'>Meet.Sup?</p>
+        <Link to={'/'} className='logo'>Meet.Sup?</Link>
       </div>
 
         <div className="nav-links">
