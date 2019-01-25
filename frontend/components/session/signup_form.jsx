@@ -40,35 +40,51 @@ class SignupForm extends React.Component {
 
   render () {
     return (
-      <div className="session-container">
-      <div className="session-form-container">
+      <div className="signup-container">
+      <div className="signup-form-container">
       
-        <form className="session-form" onSubmit={this.handleSubmit}>
+        <form className="signup-form" onSubmit={this.handleSubmit}>
 
-        <header className='sign-up'>{this.props.formType}</header>
+        <h1 className='sign-up'>Sign up</h1>
           {this.showErrors()}
 
+          <div className="demo-button-contatiner">
+            <input id="demo-button" type="submit" value='Log in with demo user'/>
+            </div>
 
-          <label>Name
-            <input className="session-label" 
-              type="text" 
-              value={this.state.name}
-              onChange={this.update('name')}/>
-          </label>
 
-          <label>Email address
-            <input className="session-label" 
-              type="text" 
-              value={this.state.email}
-              onChange={this.update('email')}/>
-          </label>
+            <div className='signup-inputs-container'>
 
-          <label>Password
-            <input className="session-label" 
-              type="password" 
-              value={this.state.password}
-              onChange={this.update('password')}/>
-          </label>
+            <div className="signup-input">
+                <label htmlFor='form-name'>Your name</label>
+                  <input className="signup-label" 
+                    id="form-name"
+                    type="text" 
+                    value={this.state.name}
+                    onChange={this.update('name')}/>
+                </div>
+
+                <div className="signup-input">
+                <label htmlFor='form-email'>Email address</label>
+                  <input className="signup-label" 
+                    id="form-email"
+                    type="text" 
+                    value={this.state.email}
+                    onChange={this.update('email')}/>
+                </div>
+
+                <div className="signup-input">
+                <label htmlFor='form-password'>Password</label>
+
+                  <input className="signup-label" 
+                    id="form-password"
+                    type="password" 
+                    value={this.state.password}
+                    onChange={this.update('password')}/>
+                </div>
+                  
+
+                </div>
 
           <p className="name-disclaimer">Your name is public. We'll use your email address to send you <br />
           updates, and your location to find MeetSups near you.</p>
@@ -78,8 +94,14 @@ class SignupForm extends React.Component {
 
           <p className="button-disclaimer">When you "Continue", you agree to MeetSup's Terms of Service. We <br/>
           will manage information about you as described in our Privacy <br/>Policy, and Cookie Policy.</p>
-              <h4>{this.props.alt_message}{this.props.alt_link}</h4>
+        
+        <div className="otherwise">
+              <h4 id="otherwise-alt">{this.props.alt_message}{this.props.alt_link}</h4>
+        </div>
+
         </form>
+
+
       </div>
       </div>
     )

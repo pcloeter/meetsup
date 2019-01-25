@@ -10,7 +10,7 @@ const msp = ({errors}) => {
     errors: errors.session,
     formType: 'Sign up',
     alt_message: 'Already a member? ',
-    alt_link: <Link to="/login">Log in.</Link>
+    alt_link: <Link to="/login" className='session-link'>Log in.</Link>
   };
 };
 

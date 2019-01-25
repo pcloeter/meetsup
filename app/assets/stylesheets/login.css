@@ -67,11 +67,11 @@
 }
 
 
-.inputs.container {
+/* .inputs.container {
   width: 426px;
   height: 245px;
   padding: 16px;
-}
+} */
 .login-input > label {
   display: block;
   font-family: Arial, Helvetica, sans-serif;

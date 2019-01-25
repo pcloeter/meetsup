@@ -80,7 +80,7 @@ class LoginForm extends React.Component {
               <div className="or">OR</div>
               <hr></hr>
             <div className="alt-buttons-container">
-            <input type="submit" value='Login with demo user'/>
+            <input type="submit" value='Log in with demo user'/>
             </div>
             </form>
 
