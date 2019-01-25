@@ -72,11 +72,12 @@ class SignupForm extends React.Component {
           updates, and your location to find MeetSups near you.</p>
 
           <input className="submit-button" type="submit" value="Continue"/>
+          
 
           <p className="button-disclaimer">When you "Continue", you agree to MeetSup's Terms of Service. We <br/>
           will manage information about you as described in our Privacy <br/>Policy, and Cookie Policy.</p>
-        </form>
               <h4>{this.props.alt_message}{this.props.alt_link}</h4>
+        </form>
       </div>
     )
   }

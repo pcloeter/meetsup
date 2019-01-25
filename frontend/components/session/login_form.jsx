@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
 
                   <div className="login-input">
                   <label htmlFor='form-password'>Password:</label>
-                  <a href="">Forgot your password?</a>
+                  
                     <input className="session-label" 
                       id="form-password"
                       type="password" 
@@ -72,21 +72,26 @@ class LoginForm extends React.Component {
                       onChange={this.update('password')}/>
                   </div>
                     
-                  <div className="checkbox">
-                    <input type="checkbox" checked readOnly/>
-                    <span>Keep me signed in</span>
-                </div>
 
                 </div>
 
               <input className="login-button" type="submit" value={this.props.formType}/>
 
+              <div className="or">OR</div>
+              <hr></hr>
+            <div className="alt-buttons-container">
+            <input type="submit" value='Login with demo user'/>
+            </div>
             </form>
-            
+
         </div>
       </div>
     )
   }
 }
 
+{/* <div className="checkbox">
+  <input type="checkbox" checked readOnly/>
+  <span>Keep me signed in</span>
+</div> */}
 export default LoginForm;

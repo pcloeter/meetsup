@@ -19,7 +19,7 @@
 
 .session-form {
   height: 534px;
-  width: 458px;
+  width: 456px;
   background-color: white;
   position: absolute;
   left: 0;
@@ -28,7 +28,7 @@
   bottom: 0;
   margin: auto;
   border-color: gray;
-  border-width: 10px;
+  
 
 
 }
@@ -38,7 +38,6 @@
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 16px;
-  border: 100px;
 }
 
 .session-form h1 {
@@ -107,7 +106,7 @@
   background-color: white;
 }
 
-.checkbox {
+/* .checkbox {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
@@ -117,7 +116,7 @@
   margin-right: 16px;
   padding-top: 5px;
   
-}
+} */
 
 .login-input > a {
   display: block;
@@ -144,9 +143,64 @@
   border-radius: 3px;
   margin-left: 16px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 100px;
+}
+
+.login-button:hover {
+cursor: pointer;
+}
 
 
-
+.alt-buttons-container {
+  background-color: #d8dfea;
+  width: 456px;
+  height: 120px;
+  padding-top: 0px;
+  border-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-shadow: 0 5px 6px -6px black
   
+
+}
+
+.or {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 4px;
+  border-radius: 4px;
+  position: relative;
+  z-index: -1;
+
+}
+  
+hr {
+  margin: 0px;
+  background-color: darkblue;
+  height: 1px;
+  border: 0px;
+  position: relative;
+
+}
+
+.alt-buttons-container > input {
+  background-color: #3b5998;
+  height: 50px;
+  width: 420px;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  border-radius: 3px;
+  justify-content: center;
+}
+
+.alt-buttons-container > input:hover {
+cursor: pointer;
 }
