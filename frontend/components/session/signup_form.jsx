@@ -41,9 +41,11 @@ class SignupForm extends React.Component {
   render () {
     return (
       <div className="session-container">
+      <div className="session-form-container">
+      
         <form className="session-form" onSubmit={this.handleSubmit}>
 
-        <header>{this.props.formType}</header>
+        <header className='sign-up'>{this.props.formType}</header>
           {this.showErrors()}
 
 
@@ -78,6 +80,7 @@ class SignupForm extends React.Component {
           will manage information about you as described in our Privacy <br/>Policy, and Cookie Policy.</p>
               <h4>{this.props.alt_message}{this.props.alt_link}</h4>
         </form>
+      </div>
       </div>
     )
   }

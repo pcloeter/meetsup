@@ -1,0 +1,22 @@
+.signup-container {
+  width: 100%;
+  height: 644px;
+  background-color: red;
+  margin-top: 3px;
+}
+.signup-form-container {
+  width: 524px;
+  height: 644px;
+  background-color: #fafafa;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  
+
+}
+
+.sign-up {
+
+}

@@ -1,13 +1,18 @@
+
+
 .logo {
   font-family: Leckerli One, cursive;
   font-size: 36px;
   text-decoration: none;
   color: #e81035;
-  position: absolute;
   padding: 10px;
   margin: auto;
-  justify-content: flex-start;
   
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .navbar {
@@ -17,6 +22,7 @@
   border-bottom-left-radius: 3px;
   box-shadow: 0 5px 6px -6px black;
   display: flex;
+  justify-content: space-between;
 }
 
 
@@ -24,12 +30,33 @@
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  align-items: baseline;
-  justify-content: flex-end;
-  
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
 }
 
 .signup-login {
+  width: 130px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
+  margin-left: 15px;
+  margin-right: 10px;
+
+}
+
+.nav-link {
+  text-decoration: none;
+  color: grey;
+}
+
+#group-create {
+  text-decoration: none;
+  font-weight: 700;
+  color: #00a2c7;
+  border-right: black;
+  border-right-width: 1px; 
+
+
+
+
 }

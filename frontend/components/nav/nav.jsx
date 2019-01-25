@@ -5,13 +5,13 @@ const Nav = (props) => {
     return (
       <div className='navbar'>
 
-      <div>
+      <div className='logo-container'>
         <p className='logo'>Meet.Sup?</p>
       </div>
 
         <div className="nav-links">
-          <nav className="group-create">
-          <Link to={'/create'}>Start a new group</Link>
+          <nav >
+          <Link to={'/create'} id="group-create">Start a new group</Link>
           </nav>
 
           <nav className="signup-login">
