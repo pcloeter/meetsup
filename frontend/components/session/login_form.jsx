@@ -40,30 +40,50 @@ class LoginForm extends React.Component {
   render () {
     return (
       <div className="session-container">
-        <form className="session-form" onSubmit={this.handleSubmit}>
+        <div className='session-form-container'>
+        
+            <form className="session-form" onSubmit={this.handleSubmit}>
+              
+              <div className="title-div">
+                <h1>{this.props.formType}</h1>
+                  {this.showErrors()}
+                  <h4>{this.props.alt_message}{this.props.alt_link}</h4>
+              </div>
+             
 
-        <header>{this.props.formType}</header>
-          {this.showErrors()}
+                <div className='inputs-container'>
 
-          <h4>{this.props.alt_message}{this.props.alt_link}</h4>
+                  <div className="login-input">
+                  <label htmlFor='form-email'>Email address:</label>
+                    <input className="session-label" 
+                      id="form-email"
+                      type="text" 
+                      value={this.state.email}
+                      onChange={this.update('email')}/>
+                  </div>
 
-          <label>Email address:
-            <input className="session-label" 
-              type="text" 
-              value={this.state.email}
-              onChange={this.update('email')}/>
-          </label>
+                  <div className="login-input">
+                  <label htmlFor='form-password'>Password:</label>
+                  <a href="">Forgot your password?</a>
+                    <input className="session-label" 
+                      id="form-password"
+                      type="password" 
+                      value={this.state.password}
+                      onChange={this.update('password')}/>
+                  </div>
+                    
+                  <div className="checkbox">
+                    <input type="checkbox" checked readOnly/>
+                    <span>Keep me signed in</span>
+                </div>
 
-          <label>Password:
-            <input className="session-label" 
-              type="password" 
-              value={this.state.password}
-              onChange={this.update('password')}/>
-          </label>
+                </div>
 
-          <input type="submit" value={this.props.formType}/>
+              <input className="login-button" type="submit" value={this.props.formType}/>
 
-        </form>
+            </form>
+            
+        </div>
       </div>
     )
   }

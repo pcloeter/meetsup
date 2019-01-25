@@ -1,0 +1,152 @@
+.session-container {
+  width: 100%;
+  height: 644px;
+  background-color: #fafafa;
+}
+
+.session-form-container {
+  width: 524px;
+  height: 644px;
+  background-color: #fafafa;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  
+
+}
+
+.session-form {
+  height: 534px;
+  width: 458px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-color: gray;
+  border-width: 10px;
+
+
+}
+.title-div {
+  width: 426px;
+  height: 86px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  border: 100px;
+}
+
+.session-form h1 {
+  width: 426px;
+  height: 42px;
+  font-size: 34px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  display: block;
+  margin: 0px;
+  
+}
+.session-form h4 {
+  width: 426px;
+  height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 20.8px;
+  margin: 0;
+}
+
+.session-link {
+  text-decoration: none;
+  color: royalblue;
+}
+
+
+.inputs.container {
+  width: 426px;
+  height: 245px;
+  padding: 16px;
+}
+.login-input > label {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500, bold;
+  line-height: 20.8px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 10px;
+  border-top: 1px;
+  border-top: black;
+}
+
+.login-input > input {
+  display: block;
+  margin-left: 16px;
+  margin-right: 16px;
+  line-height: 28px;
+  background-color: #fafafa;
+  border-radius: 3px;
+  width: 425px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.login-input > input:focus {
+  outline: darkblue;
+  border: 3px, solid, darkblue;
+  border-width: 1px;
+  background-color: white;
+}
+
+.checkbox {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 20.8px;
+  margin-left: 13px;
+  margin-right: 16px;
+  padding-top: 5px;
+  
+}
+
+.login-input > a {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 550, lighter;
+  line-height: 20.8px;
+  margin-left: 16px;
+  margin-right: 16px;
+  color: royalblue;
+}
+
+.login-input > a:link {
+  text-decoration: none;
+}
+
+.login-button {
+  background-color: rgb(237, 28, 64);
+  height: 38px;
+  width: 80px;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  border-radius: 3px;
+  margin-left: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+
+
+  
+}

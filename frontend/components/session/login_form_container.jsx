@@ -8,9 +8,9 @@ import React from 'react';
 const msp = ({errors}) => {
   return {
     errors: errors.session,
-    formType: 'Login',
+    formType: 'Log in',
     alt_message: 'Not registered with us yet? ',
-    alt_link: <Link to="/signup">Sign up.</Link>
+    alt_link: <Link to="/signup" className='session-link'>Sign up.</Link>
   }
 };
 
