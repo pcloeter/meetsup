@@ -7,8 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 
-
-user1 = User.create(
+User.create(
   name: "Paul",
   password_digest: BCrypt::Password.create('hellothere'),
   email: 'number1@gmail.com',
@@ -17,7 +16,7 @@ user1 = User.create(
   updated_at: "another time"
 )
 
-user2 = User.create(
+User.create(
   name: "Sally",
   password_digest: BCrypt::Password.create('hellothere'),
   email: 'number2@gmail.com',
@@ -27,11 +26,36 @@ user2 = User.create(
 )
 
 
-user3 = User.create(
+User.create(
   name: "Jim",
   password_digest: BCrypt::Password.create('hellothere'),
   email: 'number3@gmail.com',
   session_token: "12345",
+  created_at: "sometime",
+  updated_at: "another time"
+)
+
+Group.create(
+  name: "Ice cream eaters",
+  description: "we just eat icecream",
+  organizer_id: 1,
+  created_at: "sometime",
+  updated_at: "another time"
+)
+
+Group.create(
+  name: "Goat runners",
+  description: "We go running with goats cause they're like the best",
+  organizer_id: 92,
+  created_at: "sometime",
+  updated_at: "another time"
+)
+
+
+Group.create(
+  name: "Meditating Maniacs",
+  description: "a group for people who like really love to mediate",
+  organizer_id: 3,
   created_at: "sometime",
   updated_at: "another time"
 )

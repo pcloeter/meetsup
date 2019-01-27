@@ -2,7 +2,7 @@ import { RECEIVE_GROUPS, RECEIVE_GROUP, REMOVE_GROUP } from '../actions/group_ac
 import { merge } from 'lodash';
 
 
-const groupsReducer = (oldState, action) => {
+const groupsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   
   switch (action.type) {

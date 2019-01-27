@@ -4,7 +4,14 @@ import {Link} from 'react-router-dom';
 
 class Splash extends React.Component {
 
+  constructor(props) {
+    super(props);
 
+  }
+
+  componentDidMount() {
+    this.props.fetchGroups()
+  }
 
   render () {
 
@@ -18,7 +25,8 @@ class Splash extends React.Component {
           <div className="splash-text">
               <h1>What do you love?</h1>
               <h3>Do more of it with Meet.Sup?</h3>
-              <Link to={'/signup'} className='splash-button'>Sign Up</Link>
+                <Link to={'/signup'}><button className='splash-button'>Sign Up</button></Link>
+
           </div>
 
       </div>

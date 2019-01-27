@@ -1,4 +1,4 @@
-class::ApiGroupsController < ApiGroupsController
+class Api::GroupsController < ApplicationController
 before_action :require_logged_in, only: [:create, :edit, :destroy]
 
   def new

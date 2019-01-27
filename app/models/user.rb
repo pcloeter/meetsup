@@ -6,8 +6,13 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
-  belongs_to :group 
-  has_many :organized_groups
+  # belongs_to :group,
+  # class_name: :Group,
+  # foreign_key: :group_id
+  
+  has_many :organized_groups,
+  class_name: :Group,
+  foreign_key: :organizer_id
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64
