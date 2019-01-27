@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+// import { GroupIndexItem } from "../groups/group_index_item";
 
 
 class Splash extends React.Component {
@@ -26,9 +27,17 @@ class Splash extends React.Component {
               <h1>What do you love?</h1>
               <h3>Do more of it with Meet.Sup?</h3>
                 <Link to={'/signup'}><button className='splash-button'>Sign Up</button></Link>
-
           </div>
 
+
+        {/* <div class="main-groups-container">
+          {this.props.groups.map( group => (
+              <GroupIndexItem
+                group={group}
+                key={group.id}
+                ></GroupIndexItem>
+          ))}
+        </div> */}
       </div>
    
     ) 
