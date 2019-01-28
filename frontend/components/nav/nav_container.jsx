@@ -3,8 +3,10 @@ import { logout } from '../../actions/session_actions';
 import Nav from './nav';
 
 const msp = (state) => {
+
   return { 
-    currentUser: state.entities.users[state.session.id] 
+    currentUser: state.entities.users[state.session.id],
+    loggedIn: Boolean(state.session.id) 
   }
 }
 
