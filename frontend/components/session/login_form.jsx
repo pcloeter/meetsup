@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleSubmit(e) {
@@ -17,6 +18,7 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.formAction(user);
   }
+
 
   update (field) {
     return (e) => {
@@ -79,10 +81,10 @@ class LoginForm extends React.Component {
 
               <div className="or">OR</div>
               <hr></hr>
-            <div className="alt-buttons-container">
-            <input type="submit" value='Log in with demo user'/>
-            </div>
             </form>
+        <div className="alt-buttons-container">
+        <button onClick={() => this.props.formAction({email: "number1@gmail.com", password: 'hellothere'})} className="demo-button">Log in with Demo User</button>
+        </div>
 
         </div>
       </div>

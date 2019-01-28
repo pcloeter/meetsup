@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  validates :name, :description, :organizer_id, :latitude, :longitude, presence: true
+  # validates :name, :description, :organizer_id, :latitude, :longitude, presence: true
 
   belongs_to :organizer,
   class_name: :User,

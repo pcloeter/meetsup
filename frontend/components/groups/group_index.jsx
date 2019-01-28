@@ -9,9 +9,9 @@ class GroupIndex extends React.Component {
 
  render() {
    return (
-      <div class="main-groups-container">
+      <div className="main-groups-container">
       <h1>working on it!!</h1>
-        {props.groups.map( group => (
+        {this.props.groups.map( group => (
             <GroupIndexItem
               group={group}
               key={group.id}

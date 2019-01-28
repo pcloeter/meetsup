@@ -191,17 +191,19 @@ hr {
 
 }
 
-.alt-buttons-container > input {
+.alt-buttons-container > button {
   background-color: #3b5998;
   height: 50px;
   width: 420px;
   color: white;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bolder;
   border-radius: 3px;
   justify-content: center;
+  text-align: center;
 }
 
-.alt-buttons-container > input:hover {
+.alt-buttons-container > button:hover {
 cursor: pointer;
 }
