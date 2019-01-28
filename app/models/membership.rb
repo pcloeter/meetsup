@@ -1,4 +1,4 @@
-class Membership < ActiveRecord
+class Membership < ApplicationRecord
   validates :group_id, :user_id, presence: true
 
   belongs_to :member,
