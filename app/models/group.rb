@@ -5,8 +5,14 @@ class Group < ApplicationRecord
   class_name: :User,
   foreign_key: :organizer_id
 
+  has_many :memberships
 
-  def  self.in_bounds(bounds)
+  has_many :members,
+  through: :memberships,
+  source: :member
+
+
+  def self.in_bounds(bounds)
     self.where("latitude < ?", bounds[:northEast][:latitude])
     .where("latitude > ?", bounds[:southWest][:latitude])
     .where("longitude > ?", bounds[:southWest][:longitude])

@@ -6,6 +6,7 @@ import SplashContainer from './splash/splash_container';
 import { Route, HashRouter, Switch} from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import GroupIndexContainer from './groups/group_index_container';
+import CreateGroupContainer from './groups/create_group_container';
 
 const App = () => (
   <div>
@@ -14,6 +15,7 @@ const App = () => (
     </header>
 
     <Switch>
+      <Route exact path="/create" component={CreateGroupContainer} />
       <Route exact path="/groups" component={GroupIndexContainer} />
       <Route exact path='/' component={SplashContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />

@@ -6,9 +6,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
-  # belongs_to :group,
-  # class_name: :Group,
-  # foreign_key: :group_id
+  has_many :memberships,
+  class_name: :Membership,
+  foreign_key: :user_id
   
   has_many :organized_groups,
   class_name: :Group,
