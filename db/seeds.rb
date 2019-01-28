@@ -60,3 +60,11 @@ Group.create!(
   created_at: "sometime",
   updated_at: "another time"
 )
+
+Group.create!(
+  name: "Hudson Swimmers",
+  description: "The hudson is the best place to swim.",
+  organizer_id: user2.id,
+  created_at: "sometime",
+  updated_at: "another time"
+)

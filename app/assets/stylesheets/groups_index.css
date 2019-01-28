@@ -4,6 +4,7 @@
 }
 
 .find-banner {
+  margin-top: 1px;
   height: 168px;
   background-color: #f13a59;
   font-size: 34px;
@@ -35,8 +36,7 @@
 .groups-container {
   width: 986px;
   height: 100%;
-  display: flex;
-  justify-content: space-evenly;
+
   
 
 }
@@ -52,11 +52,20 @@
   width: 310px;
   height: 180px;
   background-color: black;
+  text-align: left;
+  float: left;
+  list-style: none;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 
 }
+
+/* .main-groups-container li:hover {
+  cursor: pointer;
+}; */
 
 .group-item-name{
   font-size: 20px;
