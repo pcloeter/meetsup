@@ -14,12 +14,14 @@ class GroupIndexItem extends React.Component {
 
   render() {
     return (
+      <li>
       <div className="group-index-item"
             onClick={this.handleClick}>
         <div className="group-info">
-          <span className="group-name">{this.props.name}</span>
+          <span className="group-item-name">{this.props.group.name}</span>
         </div>
       </div>
+      </li>
     )
   }
 }

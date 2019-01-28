@@ -30,19 +30,19 @@ class Splash extends React.Component {
           </div>
 
 
-        {/* <div class="main-groups-container">
-          {this.props.groups.map( group => (
-              <GroupIndexItem
-                group={group}
-                key={group.id}
-                ></GroupIndexItem>
-          ))}
-        </div> */}
       </div>
    
-    ) 
+   ) 
   }
-
+  
 }
+{/* <div class="main-groups-container">
+  {this.props.groups.map( group => (
+      <GroupIndexItem
+        group={group}
+        key={group.id}
+        ></GroupIndexItem>
+  ))}
+</div> */}
 
 export default Splash;
