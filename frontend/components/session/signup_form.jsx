@@ -43,12 +43,12 @@ class SignupForm extends React.Component {
       <div className="signup-container">
       <div className="signup-form-container">
       
+        <h1 className='sign-up'>Sign up</h1>
           <div className="demo-button-contatiner">
             <button onClick={() => this.props.login({email: "number1@gmail.com", password: 'hellothere'})} id="demo-button">Log in with Demo User</button>
             </div>
         <form className="signup-form" onSubmit={this.handleSubmit}>
 
-        <h1 className='sign-up'>Sign up</h1>
           {this.showErrors()}
 
 

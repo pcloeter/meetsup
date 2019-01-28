@@ -13,21 +13,26 @@
   left: 0;
   right: 0;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
 
   
 
 }
 
 .session-form {
-  height: 534px;
+  height: 420px;
   width: 456px;
   background-color: white;
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto;
+  /* margin: auto; */
   border-color: gray;
   
 

@@ -82,10 +82,10 @@ class LoginForm extends React.Component {
               <div className="or">OR</div>
               <hr></hr>
             </form>
+
         <div className="alt-buttons-container">
         <button onClick={() => this.props.formAction({email: "number1@gmail.com", password: 'hellothere'})} className="demo-button">Log in with Demo User</button>
         </div>
-
         </div>
       </div>
     )
