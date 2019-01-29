@@ -1,0 +1,158 @@
+.create-group-container {
+  height: 100%;
+  width: 100%;
+}
+
+.create-banner {
+  margin-top: 1px;
+  height: 250px;
+  background-image: url(https://secure.meetupstatic.com/img/start_v2/dweb_hero.jpg);
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  flex-direction: column;
+
+}
+
+.create-title {
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+.group-span {
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 16px;
+}
+
+.create-group-section {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  width: 808px;
+}
+
+.create-group-inputs-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.create-group-input {
+  padding-top: 48px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+}
+
+.step-span {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 11px;
+  color: #a0a0a0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  padding-left: 20px;
+}
+
+
+.create-icon {
+  width: 48px;
+  height: auto;
+  float: left;
+
+}
+
+.create-group-input label {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 28px;
+  font-weight: 500;
+  padding-left: 20px;
+  display: table;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.create-group-input input {
+  display: block;
+  height: 38px;
+  border-radius: 4px;
+  /* outline: none; */
+  border-style: solid;
+  border-color: gainsboro;
+  border-width: 1px;
+  width: 688px;
+  background-color: #fafafa;
+  margin-bottom: 60px;
+  margin-left: 70px;
+}
+
+#form-description {
+  display: block;
+  height: 200px;
+  border-radius: 4px;
+  /* outline: none; */
+  border-style: solid;
+  border-color: gainsboro;
+  border-width: 1px;
+  width: 688px;
+  background-color: #fafafa;
+  margin-bottom: 60px;
+  margin-left: 70px;
+}
+
+.create-group-input ul {
+  padding-left: 90px;
+}
+
+.create-group-input li {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  list-style-type: initial;
+  -webkit-font-smoothing: antialiased;
+  /* padding-left: 70px; */
+}
+
+.create-submit-button {
+  background-color: #e81035;
+  height: 45px;
+  width: 174px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 3px;
+  margin-right: 16px;
+  margin-left: 90px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.create-disclaimer {
+  margin-left: 90px;
+  font-size: 16px;
+  font-weight: 500px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}

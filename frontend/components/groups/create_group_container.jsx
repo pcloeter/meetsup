@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import CreateGroup from './create_group'; 
 import React from 'react';
-import {createGroup} from '../../actions/session_actions';
+import {createGroup} from '../../actions/group_actions';
 
 
 const msp = (state) => {

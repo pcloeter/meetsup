@@ -59,13 +59,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  background-image: url(https://picsum.photos/180/310/?random);
+  background-size: cover
 
 }
 
-/* .main-groups-container li:hover {
+.main-groups-container li:hover {
   cursor: pointer;
-}; */
+};
 
 .group-item-name{
   font-size: 20px;

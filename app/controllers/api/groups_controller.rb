@@ -15,7 +15,7 @@ before_action :require_logged_in, only: [:create, :edit, :destroy]
   end
   
   def show
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:id]).includes(:members)
   end
 
   def edit

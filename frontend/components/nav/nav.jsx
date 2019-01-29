@@ -45,7 +45,7 @@ class Nav extends React.Component {
             </nav>
   
             <nav className="signup-login">
-            <button onClick={() => this.props.logout()}>Log Out</button>     
+            <button onClick={this.props.logout}>Log Out</button>     
             </nav>
   
           </div>

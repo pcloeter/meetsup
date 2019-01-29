@@ -1,7 +1,7 @@
 @groups.each do |group|
   json.set! group.id do
     json.partial! 'group', group: group
-    json.memberIds []
-    # json.eventIds []
+    json.memberIds group.member_ids
+    json.membersCount group.member_ids.count
   end
 end
