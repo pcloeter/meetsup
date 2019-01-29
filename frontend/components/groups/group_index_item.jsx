@@ -18,7 +18,8 @@ class GroupIndexItem extends React.Component {
 
       <div className="group-index-item">
         <div className="group-info">
-          <span className="group-item-name">{this.props.group.name}</span>
+          <h4 id="group-item-name">{this.props.group.name}</h4>
+          <h6 id="group-count">{this.props.group.membersCount} {this.props.group.name} Members!</h6>
         </div>
       </div>
       

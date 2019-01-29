@@ -9,6 +9,7 @@ class CreateGroup extends React.Component {
     this.state = {
       name: "",
       description: "",
+      city: "",
       organizer_id: props.organizer_id,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,12 +59,12 @@ class CreateGroup extends React.Component {
             <div className="create-group-input">
             <img className="create-icon" src="https://secure.meetupstatic.com/s/img/5771697722992842330638/start_v2/globe.svg"/>
                 <span className="step-span">Step 1 of 4</span>
-              <label htmlFor='form-hometown'>What's your new MeetSup's hometown?</label>
+              <label htmlFor='form-city'>What's your new MeetSup's hometown?</label>
                   <input 
-                    id="form-hometown"
-                    type="hometown" 
-                    value={this.state.hometown}
-                    onChange={this.update('hometown')}/>
+                    id="form-city"
+                    type="city" 
+                    value={this.state.city}
+                    onChange={this.update('city')}/>
             </div>
 
             <div className="create-group-input">
@@ -82,7 +83,7 @@ class CreateGroup extends React.Component {
                 <span className="step-span">Step 3 of 4</span>
               <label htmlFor='form-description'>Describe who should join, and what your MeetSup <br/>
                 will do.</label>
-                  <input 
+                  <textarea 
                     id="form-description"
                     type="text" 
                     value={this.state.description}

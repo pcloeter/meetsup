@@ -21,6 +21,18 @@
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   -webkit-font-smoothing: antialiased;
+  width: 600px;
+}
+
+.area-meetsups {
+  height: 70px;
+  font-size: 14px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  vertical-align: middle;
+  width: 600px;
+
 }
 
 .suggested {
@@ -30,15 +42,11 @@
   padding-bottom: 7px;
   padding-left: 28px;
   width: 986px;
-
 }
 
 .groups-container {
   width: 986px;
   height: 100%;
-
-  
-
 }
 
 .groups-section {
@@ -46,12 +54,11 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
+
 .main-groups-container li {
   width: 310px;
   height: 180px;
-  background-color: black;
   text-align: left;
   float: left;
   list-style: none;
@@ -60,19 +67,31 @@
   flex-direction: column;
   justify-content: center;
   background-image: url(https://picsum.photos/180/310/?random);
-  background-size: cover
-
+  background-size: cover;
 }
-
-.main-groups-container li:hover {
-  cursor: pointer;
-};
-
-.group-item-name{
+  
+  .main-groups-container li h4 {
   font-size: 20px;
   color: white;
   font-weight: 650;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   margin-left: 10px;
-}
+  margin-bottom: 10px
+  }
+  
+  
+  .main-groups-container li h6 {
+    font-size: 13px;
+    color: white;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin-left: 10px;
+    margin-bottom: 16px;
+    margin-top: 0;
+    }
+
+    .main-groups-container li:hover {
+  cursor: pointer;
+};

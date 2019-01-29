@@ -5,8 +5,15 @@ import {Link} from 'react-router-dom';
 class Nav extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    this.props.logout().then( () => {
+       this.props.history.push('/login');
+    })
+  }
 
   loggedOutNav () {
       return (
@@ -45,7 +52,7 @@ class Nav extends React.Component {
             </nav>
   
             <nav className="signup-login">
-            <button onClick={this.props.logout}>Log Out</button>     
+            <button onClick={this.handleClick}>Log Out</button>     
             </nav>
   
           </div>

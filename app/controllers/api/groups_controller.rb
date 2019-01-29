@@ -44,7 +44,8 @@ before_action :require_logged_in, only: [:create, :edit, :destroy]
     params.require(:group).permit(
       :name,
       :description,
-      :organizer_id
+      :organizer_id,
+      :city
     )
   end
 

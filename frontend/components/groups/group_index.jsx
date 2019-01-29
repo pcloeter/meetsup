@@ -13,7 +13,7 @@ class GroupIndex extends React.Component {
         <GroupIndexItem
         key={group.id}
         group={group}
-        >hi</GroupIndexItem>
+        ></GroupIndexItem>
       )
     });
 
@@ -21,8 +21,8 @@ class GroupIndex extends React.Component {
       <div className="main-groups-container">
 
         <div className="find-banner">
-          <h1 className="find-title">Find a Meetup</h1>
-          {/* <span className="extra-span">Extra info</span> */}
+          <h1 className="find-title">Find a Meet.Sup?</h1>
+
         </div>
 
 
