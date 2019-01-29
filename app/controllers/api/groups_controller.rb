@@ -43,10 +43,8 @@ before_action :require_logged_in, only: [:create, :edit, :destroy]
   def group_params
     params.require(:group).permit(
       :name,
-      :descrtiption,
-      :organizer_id,
-      :latitude,
-      :longitude
+      :description,
+      :organizer_id
     )
   end
 
