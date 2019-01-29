@@ -52,7 +52,8 @@ class Nav extends React.Component {
             </nav>
   
             <nav className="signup-login">
-            <button onClick={this.handleClick}>Log Out</button>     
+            <Link to='/groups' className='nav-link'>Explore</Link>     
+            <button onClick={this.handleClick}>Log Out</button>
             </nav>
   
           </div>

@@ -32,8 +32,9 @@
   font-size: 14px;
   align-items: center;
   justify-content: space-between;
-  width: 280px;
+  width: 300px;
 }
+
 
 .signup-login {
   width: 130px;
@@ -57,10 +58,11 @@
   text-decoration: none;
   font-weight: 700;
   color: #00a2c7;
-  border-right: black;
-  border-right-width: 1px; 
-
-
-
+  border-right: solid;
+  border-right-width: thin;
+  border-right-color: lightgray;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
 }
