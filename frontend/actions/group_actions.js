@@ -12,7 +12,7 @@ const receiveAllGroups = (groups) => {
 }
 
 const receiveGroup = (group) => {
-  debugger
+
   return {
     type: RECEIVE_GROUP,
     group

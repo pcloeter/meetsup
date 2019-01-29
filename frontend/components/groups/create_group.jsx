@@ -18,8 +18,8 @@ class CreateGroup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const group = Object.assign({}, this.state);
-    this.props.createGroup(group);
-  }
+    this.props.createGroup(group).then( () => this.props.history.push(`${group.name}`)
+    )};
 
   update (field) {
     return (e) => {
