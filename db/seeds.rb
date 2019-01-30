@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Group.destroy_all
+Membership.destroy_all
 
 user3 = User.create!(
   name: "Paul",
@@ -36,9 +37,10 @@ user2 = User.create!(
   updated_at: "another time"
 )
 
-Group.create!(
+group1 = Group.create!(
   name: "Ice cream eaters",
   description: "we just eat icecream",
+  city: "New York",
   organizer_id: user1.id,
   created_at: "sometime",
   updated_at: "another time"
@@ -47,6 +49,7 @@ Group.create!(
 Group.create!(
   name: "Goat runners",
   description: "We go running with goats cause they're like the best",
+  city: "New York",
   organizer_id: user2.id,
   created_at: "sometime",
   updated_at: "another time"
@@ -56,6 +59,7 @@ Group.create!(
 Group.create!(
   name: "Meditating Maniacs",
   description: "a group for people who like really love to mediate",
+  city: "West New York",
   organizer_id: user3.id,
   created_at: "sometime",
   updated_at: "another time"
@@ -64,7 +68,19 @@ Group.create!(
 Group.create!(
   name: "Hudson Swimmers",
   description: "The hudson is the best place to swim.",
+  city: "Brooklyn",
   organizer_id: user2.id,
   created_at: "sometime",
   updated_at: "another time"
 )
+
+Membership.create!(
+  user_id: user3.id,
+  group_id: group1.id
+)
+
+
+Membership.create!(
+  member: user1,
+  group: group1
+  )

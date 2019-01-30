@@ -16,12 +16,12 @@ const App = () => (
     </header>
 
     <Switch>
-      <Route path="/groups/:groupName" component={GroupShowContainer} />
       <ProtectedRoute exact path="/create" component={CreateGroupContainer} />
       <Route exact path="/groups" component={GroupIndexContainer} />
       <Route exact path='/' component={SplashContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
+      <Route path="/groups/:groupId" component={GroupShowContainer} />
     </Switch>
 
   </div>

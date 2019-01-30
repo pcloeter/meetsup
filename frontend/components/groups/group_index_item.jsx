@@ -9,7 +9,7 @@ class GroupIndexItem extends React.Component {
   }
 
   handleClick() {
-    this.props.history.push(`/groups/${this.props.group.name}`)
+    this.props.history.push(`/groups/${this.props.group.id}`)
   }
 
   render() {
