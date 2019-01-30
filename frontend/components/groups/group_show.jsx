@@ -29,7 +29,7 @@ class GroupShow extends React.Component {
     return (
       <div>
 
-
+      <div className="main-top">
         <div className="show-head-container">
             <img className="group-show-pic" />
             <div className="group-show-info">
@@ -39,9 +39,11 @@ class GroupShow extends React.Component {
               <p className="show-info">&#128483; {this.props.organizer}</p>
             </div>
           </div>
+      </div>
 
-          <div className="group-menu">
-          <p className="group-menu-item">About</p>
+        <div className="group-menu">
+        <div className="group-menu-container">
+          <p className="group-menu-item-left">About</p>
           <Link to={`/${this.props.group.id}/events`}className="group-menu-item">Events</Link>
           <Link to={`/${this.props.group.id}/members`}className="group-menu-item">Members</Link>
             <div className="dropdown">
@@ -51,9 +53,10 @@ class GroupShow extends React.Component {
               </div>
             </div>
           </div>
+        </div>
 
+<div className="main-bottom">
         <div className="show-content-container">
-
           <div className="show-left">
             <div className="group-about">
               <h2>What we're about</h2>
@@ -87,6 +90,7 @@ class GroupShow extends React.Component {
           </div>
 
          </div>
+        </div>
 
       </div>
     )
