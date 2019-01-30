@@ -7,6 +7,7 @@ import { Route, HashRouter, Switch} from 'react-router-dom';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import GroupIndexContainer from './groups/group_index_container';
 import CreateGroupContainer from './groups/create_group_container';
+import GroupShowContainer from './groups/group_show_container';
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
     </header>
 
     <Switch>
+      <Route path="/groups/:groupName" component={GroupShowContainer} />
       <ProtectedRoute exact path="/create" component={CreateGroupContainer} />
       <Route exact path="/groups" component={GroupIndexContainer} />
       <Route exact path='/' component={SplashContainer} />
