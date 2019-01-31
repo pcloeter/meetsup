@@ -214,13 +214,21 @@ justify-content: center;
 .group-members ul {
   width: 100%;
   display: flex;
-
-
 }
+
+.group-organizer p {
+  margin: 0;
+  padding-top: 30px;
+  font-weight: 800;
+}
+
 .group-organizer img {
   height: 60px;
   width: 60px;
   padding: 10px;
+  float: left;
+
+  
 }
 
 .group-members ul li {
