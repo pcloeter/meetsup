@@ -16,7 +16,6 @@ class GroupShow extends React.Component {
   
   render () {
     if (!this.props.group) { return null };
-  
     const groupMembers = this.props.members.map(member => {
       return (
           <li key={member.id}>

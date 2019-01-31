@@ -45,7 +45,7 @@ class SignupForm extends React.Component {
       
         <h1 className='sign-up'>Sign up</h1>
           <div className="demo-button-contatiner">
-            <button onClick={() => this.props.login({email: "number1@gmail.com", password: 'hellothere'})} id="demo-button">Log in with Demo User</button>
+            <button onClick={() => this.props.login({email: "darthv@gmail.com", password: 'hellothere'})} id="demo-button">Log in with Demo User</button>
             </div>
         <form className="signup-form" onSubmit={this.handleSubmit}>
 

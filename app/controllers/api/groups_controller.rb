@@ -34,6 +34,7 @@ before_action :require_logged_in, only: [:create, :edit, :destroy]
 
   def destroy
     @group = Group.find(params[:id])
+    @group.delete
   end
 
   def bounds

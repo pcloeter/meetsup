@@ -9,46 +9,66 @@ User.destroy_all
 Group.destroy_all
 Membership.destroy_all
 
-user3 = User.create!(
-  name: "Paul",
-  password_digest: BCrypt::Password.create('hellothere'),
-  email: 'number1@gmail.com',
-  session_token: "12345",
-  created_at: "sometime",
-  updated_at: "another time"
-)
 
 user1 = User.create!(
-  name: "Sally",
+  name: "Ursula",
   password_digest: BCrypt::Password.create('hellothere'),
-  email: 'number2@gmail.com',
+  email: 'ursula@gmail.com',
   session_token: "12345",
   created_at: "sometime",
   updated_at: "another time"
-)
-
-
+  )
+  
+  
 user2 = User.create!(
-  name: "Jim",
+  name: "Vader",
   password_digest: BCrypt::Password.create('hellothere'),
-  email: 'number3@gmail.com',
+  email: 'darthv@gmail.com',
+  session_token: "12345",
+  created_at: "sometime",
+  updated_at: "another time"
+  )
+    
+user3 = User.create!(
+  name: "Scar",
+  password_digest: BCrypt::Password.create('hellothere'),
+  email: 'scar@gmail.com',
   session_token: "12345",
   created_at: "sometime",
   updated_at: "another time"
 )
+
+user4 = User.create!(
+  name: "Jafar",
+  password_digest: BCrypt::Password.create('hellothere'),
+  email: 'jafar@gmail.com',
+  session_token: "12345",
+  created_at: "sometime",
+  updated_at: "another time"
+)
+
+user5 = User.create!(
+  name: "Gaston",
+  password_digest: BCrypt::Password.create('hellothere'),
+  email: 'gaston@gmail.com',
+  session_token: "12345",
+  created_at: "sometime",
+  updated_at: "another time"
+)
+
 
 group1 = Group.create!(
   name: "Ice cream eaters",
-  description: "we just eat icecream",
+  description: "We just eat ice cream all day long. It's kind of gross, but kinda cool.  You probably at least low-key want to join our group.  Come on. Just do it.",
   city: "New York",
   organizer_id: user1.id,
   created_at: "sometime",
   updated_at: "another time"
 )
 
-Group.create!(
+group2 = Group.create!(
   name: "Goat runners",
-  description: "We go running with goats cause they're like the best",
+  description: "We go running with goats cause they're like the best. Goats are super underestimated as running companions. If you're in to fitness and goats-- this is the group for you.",
   city: "New York",
   organizer_id: user2.id,
   created_at: "sometime",
@@ -56,18 +76,18 @@ Group.create!(
 )
 
 
-Group.create!(
+group3 = Group.create!(
   name: "Meditating Maniacs",
-  description: "a group for people who like really love to mediate",
+  description: "A group for people who like really love to mediate. Maniacally",
   city: "West New York",
   organizer_id: user3.id,
   created_at: "sometime",
   updated_at: "another time"
 )
 
-Group.create!(
+group4 = Group.create!(
   name: "Hudson Swimmers",
-  description: "The hudson is the best place to swim.",
+  description: "The hudson is the best place to swim. The currents are strong but the company is weak... I don't think I got that quite right... but come join us for a swim, regardless! Yay!",
   city: "Brooklyn",
   organizer_id: user2.id,
   created_at: "sometime",
@@ -76,11 +96,35 @@ Group.create!(
 
 Membership.create!(
   user_id: user3.id,
-  group_id: group1.id
+  group_id: group2.id
 )
-
 
 Membership.create!(
   member: user1,
   group: group1
   )
+
+Membership.create!(
+  user_id: user2.id,
+  group_id: group2.id
+)
+
+Membership.create!(
+  user_id: user1.id,
+  group_id: group2.id
+)
+
+Membership.create!(
+  user_id: user4.id,
+  group_id: group2.id
+)
+
+Membership.create!(
+  user_id: user5.id,
+  group_id: group2.id
+)
+
+Membership.create!(
+  user_id: user3.id,
+  group_id: group3.id
+)
