@@ -10,7 +10,7 @@ const msp = (state, ownProps) => {
     const user = state.entities.users[id]
     return user
   }).filter( user => Boolean(user));
-  debugger
+  
   return {
     group,
     organizer,
