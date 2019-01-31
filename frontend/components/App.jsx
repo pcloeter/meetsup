@@ -8,6 +8,7 @@ import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import GroupIndexContainer from './groups/group_index_container';
 import CreateGroupContainer from './groups/create_group_container';
 import GroupShowContainer from './groups/group_show_container';
+import FooterContainer from './footer/footer_container';
 
 const App = () => (
   <div>
@@ -24,6 +25,9 @@ const App = () => (
       <Route path="/groups/:groupId" component={GroupShowContainer} />
     </Switch>
 
+    <footer>
+      <Route path="/" component={FooterContainer} />
+    </footer>
   </div>
 );
 
