@@ -12,21 +12,22 @@ class GroupShow extends React.Component {
   }
 
 
-  // showMembers () {
-  //   this.props.group.members.slice(15).map( member => {
-  //     return (
-  //       <li>
-  //         <img src="" alt=""/>
-  //       </li>
-  //     )
-  //   })
-  // }
-
-
+  
+  
   render () {
     if (!this.props.group) { return null };
+  
+    const groupMembers = this.props.members.map(member => {
+      return (
+          <li key={member.id}>
+            <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
+            <p>{member.name}</p>
+          </li>
+      )
+    });
     
     return (
+
       <div>
 
       <div className="main-top">
@@ -36,7 +37,7 @@ class GroupShow extends React.Component {
               <p className="group-title">{this.props.group.name}</p>
               <p className="show-info">&#127760; {this.props.group.city}</p>
               <p className="show-info">	&#128107; {this.props.group.membersCount}</p>
-              <p className="show-info">&#128483; {this.props.organizer}</p>
+              <p className="show-info">&#128483; {this.props.organizer.name}</p>
             </div>
           </div>
       </div>
@@ -66,7 +67,7 @@ class GroupShow extends React.Component {
             <div className="group-events">
               <h2>Upcoming Events</h2>
               <ul>
-                EVENT LIST ITEM
+                <li>{this.props.group.name} has no events scheduled! :-( </li>
               </ul>
             </div>
 
@@ -76,15 +77,13 @@ class GroupShow extends React.Component {
 
             <div className="group-organizer">
               <h2>Organizer</h2>
-              <img className="organizer-pic" src=""/>
-              <p>{this.props.organizerName}</p>
+              <img className="organizer-pic" src="https://image.flaticon.com/icons/svg/145/145850.svg"/>
+              <p>{this.props.organizer.name}</p>
             </div>
 
             <div className="group-members">
               <h2>Members ({this.props.group.membersCount})</h2>
-              <ul>
-                MEMBERS LIST ITEM
-              </ul>
+                <ul>{groupMembers}</ul>
             </div>
 
           </div>

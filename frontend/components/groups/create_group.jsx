@@ -1,5 +1,5 @@
 import React from "react";
-
+import { withRouter } from 'react-router-dom';
 
 
 class CreateGroup extends React.Component {
@@ -18,7 +18,7 @@ class CreateGroup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const group = Object.assign({}, this.state);
-    this.props.createGroup(group).then( () => this.props.history.push(`${group.name}`)
+    this.props.createGroup(group).then( (group) => this.props.history.push(`groups/`)
     )};
 
   update (field) {
@@ -114,4 +114,4 @@ class CreateGroup extends React.Component {
   }
 }
 
-export default CreateGroup;
+export default withRouter(CreateGroup);

@@ -4,12 +4,15 @@ import GroupShow from "./group_show";
 
 const msp = (state, ownProps) => {
   const group = state.entities.groups[ownProps.match.params.groupId] || {memberIds:[]};
+  let organizer = state.entities.users[group.organizer_id] || {}
   const members = group.memberIds.map( id => {
-    return state.entities.users[id];
-  })
+    const user = state.entities.users[id]
+    return user
+  }).filter( user => Boolean(user));
+
   return {
     group,
-    // organizerName: state.entities.users[group.organizer_id],
+    organizer,
     members
   }
 };

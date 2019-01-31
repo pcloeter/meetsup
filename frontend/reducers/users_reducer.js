@@ -5,7 +5,6 @@ import { RECEIVE_GROUP } from "../actions/group_actions";
 
 const usersReducer = (oldState={}, action) => {
   Object.freeze(oldState);
-
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       const newState = merge({}, oldState, {[action.user.id]: action.user });

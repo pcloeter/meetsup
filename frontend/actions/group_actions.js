@@ -42,13 +42,12 @@ export const fetchGroup = (id) => {
   }
 };
 
-export const createGroup = (group) => {
-  return (dispatch) => {
-    return GroupApiUtil.createGroup(group).then( group => {
-      return dispatch(receiveGroup(group))
-    })
-  }
-};
+export const createGroup = (group) => dispatch => (
+  GroupApiUtil.createGroup(group).then(group => {
+    dispatch(receiveGroup(group));
+    return group;
+  })
+);
 
 export const updateGroup = (group) => {
   return (dispatch) => {

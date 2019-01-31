@@ -48,7 +48,7 @@
 
 .group-menu {
   height: 66px;
-  width: left;
+  width: 100%;
   border-top: solid;
   border-top-width: thin;
   border-top-color: lightgray;
@@ -87,10 +87,11 @@
   font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #404040;
+  color: #4290af;
   margin: 24px;
   margin-left: 0px;
   justify-content: left;
+
 }
 
 
@@ -166,6 +167,14 @@ justify-content: center;
   color: #404040;
 }
 
+.group-events li {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #404040;
+}
+
 .show-left p {
   font-size: 16px;
   font-weight: 400;
@@ -200,4 +209,31 @@ justify-content: center;
   -webkit-font-smoothing: antialiased;
   color: #404040;
   margin-bottom: 40px;
+}
+
+.group-members ul {
+  width: 100%;
+  display: flex;
+
+
+}
+.group-organizer img {
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+}
+
+.group-members ul li {
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  float: left;
+  list-style: none;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.group-members {
+  float: left;
+  list-style: none;
 }
