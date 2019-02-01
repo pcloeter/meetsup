@@ -28,6 +28,10 @@ class User < ApplicationRecord
   has_many :memberships,
   class_name: :Membership,
   foreign_key: :user_id
+
+  has_many :groups,
+  through: :memberships,
+  source: :group
   
   has_many :organized_groups,
   class_name: :Group,

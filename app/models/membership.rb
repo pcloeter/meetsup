@@ -18,4 +18,12 @@ class Membership < ApplicationRecord
 
   belongs_to :group,
   foreign_key: :group_id
+
+  has_many :member_groups,
+  through: :member,
+  source: :groups
+
+  has_many :group_members,
+  through: :group,
+  source: :members
 end

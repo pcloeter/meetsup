@@ -5,16 +5,20 @@ import { createMembership, deleteMembership } from '../../actions/membership_act
 
 const msp = (state, ownProps) => {
   const group = state.entities.groups[ownProps.match.params.groupId] || {memberIds:[]};
-  let organizer = state.entities.users[group.organizer_id] || {}
+  let organizer = state.entities.users[group.organizer_id] || {};
+
+ 
+
   const members = group.memberIds.map( id => {
     const user = state.entities.users[id]
     return user
   }).filter( user => Boolean(user));
-  
+
   return {
     group,
     organizer,
-    members
+    members,
+    currentUser: state.entities.users[state.session.id],
   }
 };
 

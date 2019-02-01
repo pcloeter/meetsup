@@ -5,6 +5,8 @@ class GroupShow extends React.Component {
  
   constructor (props) {
     super(props);
+    this.alreadyMember = this.alreadyMember.bind(this);
+    this.notMember = this.notMember.bind(this);
   }
 
   componentDidMount() {
@@ -12,6 +14,23 @@ class GroupShow extends React.Component {
   }
 
 
+  alreadyMember () {
+    return (
+      <button onClick={() => this.props.deleteMembership(this.props.match.params.groupId).then( () => this.props.history.push('/groups'))} 
+      className="membership-leave">Leave Group</button>
+    )
+  }
+
+  notMember () {
+    return (
+      <button onClick={() => this.props.createMembership(this.props.match.params.groupId).then( () => this.props.history.push(this.props.group.id))} 
+      className="membership-join">Join Group</button>  
+    )
+  }
+
+  // loggedOut () {
+  //   <Link to={'/signup'}>Sign up</Link>
+  // }
   
   
   render () {
@@ -23,8 +42,7 @@ class GroupShow extends React.Component {
             <p>{member.name}</p>
           </li>
       )
-    });
-    
+    });  
     return (
 
       <div>
@@ -46,12 +64,9 @@ class GroupShow extends React.Component {
           <p className="group-menu-item-left">About</p>
           <Link to={`/${this.props.group.id}/events`}className="group-menu-item">Events</Link>
           <Link to={`/${this.props.group.id}/members`}className="group-menu-item">Members</Link>
-            <div className="dropdown">
-              <button className="dropdown-text">You're a member</button>
-              <div className="dropdown-content">
-              <p>Hello World!</p>
-              </div>
-            </div>
+          <div>
+          {this.props.group.memberIds.includes(this.props.currentUser.id) ? this.alreadyMember() : this.notMember()}
+          </div>
           </div>
         </div>
 

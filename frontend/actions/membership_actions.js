@@ -4,10 +4,11 @@ export const RECEIVE_MEMBERSHIP = "RECEIVE_MEMBERSHIP";
 export const REMOVE_MEMBERSHIP = "REMOVE_MEMBERSHIP";
 
 
-const receiveMembership = (membership) => {
+const receiveMembership = ({user, group}) => {
   return {
     type: RECEIVE_MEMBERSHIP,
-    membership
+    user,
+    group,
   }
 }
 
@@ -19,17 +20,17 @@ const removeMembership = (membershipId) => {
 }
 
 
-export const createMembership = (groupId) => {
+export const createMembership = (membership) => {
   return dispatch => {
-    return MembershipApiUtil.createMembership(groupId).then( membership => {
+    return MembershipApiUtil.createMembership(membership).then( membership => {
       return dispatch(receiveMembership(membership))
     })
   };
 };
 
-export const deleteMembership = (membershipId) => {
+export const deleteMembership = (groupId) => {
   return dispatch => {
-    return MembershipApiUtil.deleteMembership(membershipId).then( membershipId => {
+    return MembershipApiUtil.deleteMembership(groupId).then( membershipId => {
       return dispatch(removeMembership(membershipId))
     })
   };
