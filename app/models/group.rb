@@ -29,6 +29,10 @@ class Group < ApplicationRecord
   through: :memberships,
   source: :member
 
+  has_many :events,
+  class_name: :Event,
+  foreign_key: :group_id
+
 
   def self.in_bounds(bounds)
     self.where("latitude < ?", bounds[:northEast][:latitude])

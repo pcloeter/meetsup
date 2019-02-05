@@ -3,7 +3,8 @@ json.group do
     json.partial! 'api/groups/group', group: @group
     json.memberIds @group.member_ids
     json.membersCount @group.member_ids.count
-    # json.eventIds @group.events.pluck(:id)
+    json.eventIds @group.event_ids
+    json.eventsCount @group.event_ids.count
   end
 end
 
