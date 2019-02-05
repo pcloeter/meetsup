@@ -49,13 +49,13 @@ export const createEvent = (event) => dispatch => (
   })
 );
 
-export const updateEvent = (event => {
+export const updateEvent = (event) => {
   return (dispatch) => {
     return EventApiUtil.updateEvent(event).then( event => {
       return dispatch(receiveEvent(event))
     })
   }
-};
+}
 
 export const deleteEvent= (id) => {
   return (dispatch) => {
