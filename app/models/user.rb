@@ -37,6 +37,12 @@ class User < ApplicationRecord
   class_name: :Group,
   foreign_key: :organizer_id
 
+  has_many :rsvps,
+  class_name: :Rsvp,
+  foreign_key: :user_id
+
+  
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64
   end

@@ -49,7 +49,7 @@ class SignupForm extends React.Component {
             </div>
         <form className="signup-form" onSubmit={this.handleSubmit}>
 
-          {this.showErrors()}
+          <ul>{this.showErrors()}</ul>
 
 
 

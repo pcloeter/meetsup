@@ -25,7 +25,6 @@ before_action :require_logged_in, only: [:create, :edit, :destroy]
     else
       render json: @group.errors.full_messages
     end
-
   end
 
   def index
