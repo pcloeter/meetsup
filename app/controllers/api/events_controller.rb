@@ -19,7 +19,7 @@ class Api::EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def edit
+  def update
     @event = Event.find(params[:id])
       if @event.save
         render 'api/events/show'
@@ -38,7 +38,7 @@ class Api::EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:user_id, :group_id)
+    params.require(:event).permit(:user_id, :group_id, :details)
   end
 
 end
