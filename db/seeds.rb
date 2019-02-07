@@ -101,6 +101,7 @@ group5 = Group.create!(
   description: "Anybody who likes what's beneath the sidewalk or likes to see the ins and outs of their town's most humble and private infrastructure.",
   city: "Jersey City",
   organizer_id: user5.id,
+)
 
 Membership.create!(
   user_id: user3.id,
