@@ -68,7 +68,9 @@ group1 = Group.create!(
 
 group2 = Group.create!(
   name: "Goat runners",
-  description: "We go running with goats cause they're like the best. Goats are super underestimated as running companions. If you're in to fitness and goats-- this is the group for you.",
+  description: "We go running with goats cause they're like the best. Goats are super underestimated as running companions. 
+  
+  If you're in to fitness and goats-- this is the group for you.",
   city: "New York",
   organizer_id: user2.id,
   created_at: "sometime",
@@ -78,7 +80,7 @@ group2 = Group.create!(
 
 group3 = Group.create!(
   name: "Meditating Maniacs",
-  description: "A group for people who like really love to mediate. Maniacally",
+  description: "A group for people who like really love to mediate. Maniacally, but in a zen kind of way.",
   city: "West New York",
   organizer_id: user3.id,
   created_at: "sometime",
@@ -93,6 +95,12 @@ group4 = Group.create!(
   created_at: "sometime",
   updated_at: "another time"
 )
+
+group5 = Group.create!(
+  name: "Tours of Sewers",
+  description: "Anybody who likes what's beneath the sidewalk or likes to see the ins and outs of their town's most humble and private infrastructure.",
+  city: "Jersey City",
+  organizer_id: user5.id,
 
 Membership.create!(
   user_id: user3.id,
