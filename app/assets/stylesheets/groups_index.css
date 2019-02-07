@@ -69,7 +69,7 @@
   justify-content: center;
   background-image: url(https://picsum.photos/180/310/?random);
   background-size: cover;
- 
+  border-radius: 5px;
 }
 
 #group-item-name{
