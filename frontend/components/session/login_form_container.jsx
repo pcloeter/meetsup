@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import LoginForm from './login_form';
-import { login, loginDemoUser } from '../../actions/session_actions';
+import { login, loginDemoUser, clearSessionErrors } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
@@ -18,6 +18,7 @@ const mdp = (dispatch) => {
   return{
     formAction: (user) => dispatch(login(user)),
     loginDemoUser: () => dispatch(loginDemoUser()),
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
   }
 };
 
