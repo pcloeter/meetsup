@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
 
   showErrors() {
     return (
-      <ul>
+      <ul className="errors-session">
         {this.props.errors.map((error, idx) => {
             return <li key={`error-${idx}`}>{error}</li>
           }
@@ -48,8 +48,8 @@ class LoginForm extends React.Component {
               
               <div className="title-div">
                 <h1>{this.props.formType}</h1>
-                  {this.showErrors()}
                   <h4>{this.props.alt_message}{this.props.alt_link}</h4>
+                  {this.showErrors()}
               </div>
              
 
