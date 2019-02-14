@@ -49,6 +49,9 @@
 .links-footer a {
   padding-right: 20px;
 }
+.links-footer i {
+  height: 20px;
+}
 
 .disclaimer-footer {
   color: lightgray;

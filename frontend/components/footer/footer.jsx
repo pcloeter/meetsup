@@ -31,9 +31,14 @@ class Footer extends React.Component {
 
 
           <div className="links-footer">
-            <a href="https://www.linkedin.com/in/pdcloeter" target="_blank">Paul's LinkedIn</a>
-            <a href="https://www.linkedin.com/in/pdcloeter" target="_blank"> Paul's GitHub</a>
-            <a href="https://www.meetup.com" target="_blank">MeetUp</a>
+          <a href="https://www.linkedin.com/in/pdcloeter">
+              <i className="fab fa-linkedin"></i> Paul's LinkedIn</a>
+            <a href="https://www.linkedin.com/in/pdcloeter">
+              <i className="fab fa-github"></i> Paul's GitHub</a>
+            <a href="https://pcloeter.github.io">
+              <i className="fab fa-product-hunt"></i> Portfolio Site</a>
+            <a href="https://www.meetup.com">
+              <i className="fab fa-meetup"></i> MeetUp</a>
           </div>
           <p className="disclaimer-footer">© 2019 Meet.Sup?  Meet.Sup? is an application wholly and soley created for educational and demostrational purposes.</p>
       </div>
@@ -58,11 +63,16 @@ class Footer extends React.Component {
 
 
           <div className="links-footer">
-            <a href="https://www.linkedin.com/in/pdcloeter" target="_blank">Paul's LinkedIn</a>
-            <a href="https://www.linkedin.com/in/pdcloeter" target="_blank">Paul's GitHub</a>
-            <a href="https://www.meetup.com" target="_blank">MeetUp</a>
+            <a href="https://www.linkedin.com/in/pdcloeter">
+              <i className="fab fa-linkedin"></i> Paul's LinkedIn</a>
+            <a href="https://www.linkedin.com/in/pdcloeter">
+              <i className="fab fa-github"></i> Paul's GitHub</a>
+            <a href="https://pcloeter.github.io">
+              <i className="fab fa-product-hunt"></i> Portfolio Site</a>
+            <a href="https://www.meetup.com">
+              <i className="fab fa-meetup"></i> MeetUp</a>
           </div>
-          <p className="disclaimer-footer">© 2019 Meet.Sup?  Meet.Sup? is an application wholly and soley created for educational and demostrational purposes.</p>
+          <p className="disclaimer-footer">© 2019 Meet.Sup?  Meet.Sup? is an application wholly and solely created for educational and demostrational purposes.</p>
       </div>
       </div>
     </div>
