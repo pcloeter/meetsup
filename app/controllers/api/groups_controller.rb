@@ -18,7 +18,7 @@ before_action :require_logged_in, only: [:create, :edit, :destroy]
     @group = Group.find(params[:id])
   end
 
-  def edit
+  def update
     @group = Group.find(params[:id])
     if @group.save
       render "api/groups/show"
