@@ -2,9 +2,12 @@ import { connect } from 'react-redux';
 import CreateEvent from './create_event';
 import { createEvent } from '../../actions/event_actions';
 
-const msp = (state) => {
+const msp = (state, ownProps) => {
+  const host_id = state.session.id;
+
   return {
-    host_id: state.session.id
+    group_id: ownProps.match.params.groupId,
+    host_id
   }
 }
 
