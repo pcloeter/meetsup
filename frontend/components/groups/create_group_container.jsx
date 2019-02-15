@@ -5,6 +5,7 @@ import {createGroup} from '../../actions/group_actions';
 
 
 const msp = (state) => {
+
   return {
     organizer_id: state.session.id,
   }

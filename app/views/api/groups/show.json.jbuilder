@@ -5,6 +5,7 @@ json.group do
     json.membersCount @group.member_ids.count
     json.eventIds @group.event_ids
     json.eventsCount @group.event_ids.count
+    json.organizer @group.organizer
   end
 end
 
@@ -15,6 +16,9 @@ json.users do
     end
   end
 end
+
+
+
 
 
 

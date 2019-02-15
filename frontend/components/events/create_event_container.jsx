@@ -4,7 +4,6 @@ import { createEvent } from '../../actions/event_actions';
 
 const msp = (state, ownProps) => {
   const host_id = state.session.id;
-debugger
   return {
     group_id: ownProps.match.params.groupId,
     host_id

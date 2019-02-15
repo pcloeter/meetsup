@@ -59,8 +59,8 @@ export const updateGroup = (group) => {
 
 export const deleteGroup = (id) => {
   return (dispatch) => {
-    return GroupApiUtil.deleteGroup(id).then (group => {
-      return dispatch(removeGroup(group.id))
+    return GroupApiUtil.deleteGroup(id).then( () => {
+      return dispatch(removeGroup(id))
     })
   }
 }

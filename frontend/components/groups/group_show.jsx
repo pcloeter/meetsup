@@ -13,6 +13,10 @@ class GroupShow extends React.Component {
     this.props.fetchGroup(this.props.match.params.groupId)
   }
 
+  componentDidUpdate() {
+    this.props.fetchGroup(this.props.match.params.groupId)
+  }
+
 
   alreadyMember () {
     return (
@@ -28,10 +32,6 @@ class GroupShow extends React.Component {
     )
   }
 
-  // loggedOut () {
-  //   <Link to={'/signup'}>Sign up</Link>
-  // }
-  
   
   render () {
     if (!this.props.group) { return null };

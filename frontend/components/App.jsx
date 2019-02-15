@@ -24,7 +24,7 @@ const App = () => (
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <ProtectedRoute exact path="/groups/:groupId" component={GroupShowContainer} />
-      <ProtectedRoute exact path="/groups/:groupId/events" component={CreateEventContainer} />
+      <Route exact path="/groups/:groupId/events" component={CreateEventContainer} />
     </Switch>
 
     <footer>

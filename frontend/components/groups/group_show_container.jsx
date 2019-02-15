@@ -5,7 +5,7 @@ import { createMembership, deleteMembership } from '../../actions/membership_act
 
 const msp = (state, ownProps) => {
   const group = state.entities.groups[ownProps.match.params.groupId] || {memberIds:[]};
-  let organizer = state.entities.users[group.organizer_id] || {};
+  let organizer = state.entities.groups[ownProps.match.params.groupId].organizer || {};
 
  
 
