@@ -103,6 +103,8 @@ group5 = Group.create!(
   organizer_id: user5.id,
 )
 
+
+
 Membership.create!(
   user_id: user3.id,
   group_id: group2.id
@@ -134,6 +136,56 @@ Membership.create!(
 )
 
 Membership.create!(
+  user_id: user2.id,
+  group_id: group5.id
+)
+
+Membership.create!(
   user_id: user3.id,
-  group_id: group3.id
+  group_id: group5.id
+)
+
+Membership.create!(
+  user_id: user4.id,
+  group_id: group5.id
+)
+
+Membership.create!(
+  user_id: user1.id,
+  group_id: group5.id
+)
+
+event1 = Event.create!(
+  host_id: user5.id,
+  group_id: group5.id,
+  title: "Gowanus Underworld Explored!",
+  details: "Let's explore subterrainian Brooklyn together.  Gowanus...  Sure, it's gross and sketchy, but doesn't that ultimately describe this group on the whole?  Let's do it!"
+)
+
+event2 = Event.create!(
+  host_id: user5.id,
+  group_id: group5.id,
+  title: "Jersey City Sewer System Splunking",
+  details: "Jersey City has an underworld all it's own.  Join us for an adventure on the PATH train, followed by an exploration of life under Exchange Place."
+)
+
+Rsvp.create!(
+  event_id: event1.id,
+  user_id: user1.id
+)
+Rsvp.create!(
+  event_id: event1.id,
+  user_id: user2.id
+)
+Rsvp.create!(
+  event_id: event1.id,
+  user_id: user3.id
+)
+Rsvp.create!(
+  event_id: event1.id,
+  user_id: user4.id
+)
+Rsvp.create!(
+  event_id: event2.id,
+  user_id: user4.id
 )

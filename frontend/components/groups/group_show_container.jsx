@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
-import {fetchGroup} from "../../actions/group_actions";
+import {fetchGroup, deleteGroup} from "../../actions/group_actions";
 import GroupShow from "./group_show";
 import { createMembership, deleteMembership } from '../../actions/membership_actions';
 
 const msp = (state, ownProps) => {
-  const group = state.entities.groups[ownProps.match.params.groupId] || {memberIds:[]};
-  let organizer = state.entities.groups[ownProps.match.params.groupId].organizer || {};
-
- 
-
+  if (state.entities.groups[ownProps.match.params.groupId]) {
+    var group = state.entities.groups[ownProps.match.params.groupId];
+    var organizer = state.entities.groups[ownProps.match.params.groupId].organizer;
+  } else {
+    var group = {memberIds:[]};
+    var organizer = {};
+  }
+  
   const members = group.memberIds.map( id => {
     const user = state.entities.users[id]
     return user
@@ -24,6 +27,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
   return {
+    deleteGroup: (id) => dispatch(deleteGroup(id)),
     fetchGroup: (id) => dispatch(fetchGroup(id)),
     createMembership: (groupId) => dispatch(createMembership(groupId)),
     deleteMembership: (membershipId) => dispatch(deleteMembership(membershipId))

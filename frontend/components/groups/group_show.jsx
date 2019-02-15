@@ -7,16 +7,24 @@ class GroupShow extends React.Component {
     super(props);
     this.alreadyMember = this.alreadyMember.bind(this);
     this.notMember = this.notMember.bind(this);
+    this.organizedGroup = this.organizedGroup.bind(this);
+    this.whichButton = this.whichButton.bind(this);
+    this.state = {true: true};
   }
 
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.groupId)
   }
 
-  componentDidUpdate() {
-    this.props.fetchGroup(this.props.match.params.groupId)
-  }
 
+  organizedGroup () {
+    return (
+      <button onClick={() => this.props.deleteGroup(this.props.match.params.groupId).then( () => {
+        debugger
+       this.props.history.push('/groups')})}
+      className="membership-leave">Delete Group</button>
+    )
+  }
 
   alreadyMember () {
     return (
@@ -31,6 +39,17 @@ class GroupShow extends React.Component {
       className="membership-join">Join Group</button>  
     )
   }
+
+  whichButton () {
+    if (this.props.currentUser.id === this.props.organizer.id) {
+      return this.organizedGroup();
+    } else if (this.props.group.memberIds.includes(this.props.currentUser.id)) {
+      return this.alreadyMember();
+    } else {
+      return this.notMember();
+    }
+  }
+  
 
   
   render () {
@@ -65,7 +84,7 @@ class GroupShow extends React.Component {
           <Link to={`/groups/${this.props.group.id}/events`}className="group-menu-item">Events</Link>
           <Link to={`/groups/${this.props.group.id}/members`}className="group-menu-item">Members</Link>
           <div>
-          {this.props.group.memberIds.includes(this.props.currentUser.id) ? this.alreadyMember() : this.notMember()}
+          {this.whichButton()}
           </div>
           </div>
         </div>

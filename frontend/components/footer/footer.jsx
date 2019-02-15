@@ -40,7 +40,7 @@ class Footer extends React.Component {
             <a href="https://www.meetup.com">
               <i className="fab fa-meetup"></i> MeetUp</a>
           </div>
-          <p className="disclaimer-footer">© 2019 Meet.Sup?  Meet.Sup? is an application wholly and soley created for educational and demostrational purposes.</p>
+          <p className="disclaimer-footer">© 2019 Meet.Sup?  Meet.Sup? is an application wholly and soley created for educational and demonstrational purposes.</p>
       </div>
       </div>
     </div>
