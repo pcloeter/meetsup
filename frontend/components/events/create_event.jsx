@@ -16,4 +16,25 @@ class CreateEvent extends React.Component {
       address:"",
     }
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const event = Object.assign({}, this.state);
+    this.props.createEvent(event).then( event => {
+      this.props.history.push(`events/`);
+    }
+  )}
+  
+  update (field) {
+    return (e) => {
+      this.setState({
+        [field]: e.target.value
+      })
+    }
+  }
+
+
+
 }
+
+export default CreateEvent;

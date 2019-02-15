@@ -9,6 +9,7 @@ import GroupIndexContainer from './groups/group_index_container';
 import CreateGroupContainer from './groups/create_group_container';
 import GroupShowContainer from './groups/group_show_container';
 import FooterContainer from './footer/footer_container';
+import CreateEventContainer from './events/create_event_container';
 
 const App = () => (
   <div>
@@ -22,7 +23,8 @@ const App = () => (
       <Route exact path='/' component={SplashContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
-      <ProtectedRoute path="/groups/:groupId" component={GroupShowContainer} />
+      <ProtectedRoute exact path="/groups/:groupId" component={GroupShowContainer} />
+      <ProtectedRoute exact path="/groups/:groupId/events" component={CreateEventContainer} />
     </Switch>
 
     <footer>

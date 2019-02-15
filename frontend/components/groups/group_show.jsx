@@ -62,8 +62,8 @@ class GroupShow extends React.Component {
         <div className="group-menu">
         <div className="group-menu-container">
           <p className="group-menu-item-left">About</p>
-          <Link to={`/${this.props.group.id}/events`}className="group-menu-item">Events</Link>
-          <Link to={`/${this.props.group.id}/members`}className="group-menu-item">Members</Link>
+          <Link to={`/groups/${this.props.group.id}/events`}className="group-menu-item">Events</Link>
+          <Link to={`/groups/${this.props.group.id}/members`}className="group-menu-item">Members</Link>
           <div>
           {this.props.group.memberIds.includes(this.props.currentUser.id) ? this.alreadyMember() : this.notMember()}
           </div>
