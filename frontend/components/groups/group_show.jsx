@@ -50,6 +50,36 @@ class GroupShow extends React.Component {
     }
   }
   
+  groupEventsShow () {
+    if (this.props.group.eventsCount === 0 ) {
+      return <li>{this.props.group.name} has no events scheduled! :-( </li>
+    } else {
+      this.props.group.events.slice(2).forEach( event => {
+        return (
+          <div className="groupEventContainer">
+          <div className="groupEventInfo">
+            <div>
+              <span>{event.date}</span>
+              <span>{event.time}</span>
+              <span>{event.title}</span>
+              <span>{event.address}</span>
+            </div>
+            <div>
+              <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
+
+            </div>
+          </div>
+          <p className="groupEventDescription">{event.description}</p>
+          <div className="groupEventAttend">
+            <div>
+
+            </div>
+          </div>
+          </div>
+        )
+      })
+    }
+  }
 
   
   render () {
@@ -114,8 +144,8 @@ class GroupShow extends React.Component {
 
             <div className="group-events">
               <h2>Upcoming Events</h2>
-              <ul>
-                <li>{this.props.group.name} has no events scheduled! :-( </li>
+              <ul className="group-events-list">
+                {/* <li>{this.props.group.name} has no events scheduled! :-( </li> */}
               </ul>
             </div>
 

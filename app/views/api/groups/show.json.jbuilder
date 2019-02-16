@@ -4,8 +4,11 @@ json.group do
     json.memberIds @group.member_ids
     json.membersCount @group.member_ids.count
     json.eventsCount @group.events.count
-    json.events @group.events
     json.organizer @group.organizer
+    json.events @group.events do |event|
+      json.attendeeIds event.attendee_ids
+      json.attendeesCount event.attendee_ids.count
+    end
   end
 end
 
