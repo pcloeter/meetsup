@@ -54,6 +54,19 @@ class GroupShow extends React.Component {
   
   render () {
     if (!this.props.group) { return null };
+    
+    const group = this.props.group
+      if (group.id % 10 === 9) { var img = `/img8.jpg`; }
+      else if (group.id % 10 === 8) { var img = `/img9.jpg`; }
+      else if (group.id % 10 === 7) { var img = `/img7.jpg`; }
+      else if (group.id % 10 === 6) { var img = `/img6.jpg`; }
+      else if (group.id % 10 === 5) { var img = `/img5.jpg`; }
+      else if (group.id % 10 === 4) { var img = `/img4.jpg`; }
+      else if (group.id % 10 === 3) { var img = `/img3.jpg`; }
+      else if (group.id % 10 === 2) { var img = `/img2.jpg`; }
+      else if (group.id % 10 === 1) { var img = `/img1.jpg`; }
+      else { var img = `/img0.jpg`; }
+
     const groupMembers = this.props.members.map(member => {
       return (
           <li key={member.id}>
@@ -61,14 +74,16 @@ class GroupShow extends React.Component {
             <p>{member.name}</p>
           </li>
       )
-    });  
-    return (
+    });
+    
+    
 
+    return (
       <div>
 
       <div className="main-top">
         <div className="show-head-container">
-            <img className="group-show-pic" />
+            <img style={{backgroundImage: `url(${img})`}}className="group-show-pic" />
             <div className="group-show-info">
               <p className="group-title">{this.props.group.name}</p>
               <p className="show-info">&#127760; {this.props.group.city}</p>
