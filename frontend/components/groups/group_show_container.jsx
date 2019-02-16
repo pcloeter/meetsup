@@ -7,6 +7,7 @@ const msp = (state, ownProps) => {
   if (state.entities.groups[ownProps.match.params.groupId]) {
     var group = state.entities.groups[ownProps.match.params.groupId];
     var organizer = state.entities.groups[ownProps.match.params.groupId].organizer;
+    var events = state.entities.groups[ownProps.match.params.groupId].events
   } else {
     var group = {memberIds:[]};
     var organizer = {};

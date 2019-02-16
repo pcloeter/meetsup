@@ -14,7 +14,7 @@ class GroupIndexItem extends React.Component {
 
   render() {
     return (
-      <li onClick={this.handleClick}>
+      <li style={{backgroundImage: `url(${this.props.img})`}} onClick={this.handleClick}>
 
       <div className="group-index-item">
         <div className="group-info">
