@@ -6,6 +6,7 @@ json.group do
     json.eventsCount @group.events.count
     json.organizer @group.organizer
     json.events @group.events do |event|
+      json.partial! 'api/events/event', event: event
       json.attendeeIds event.attendee_ids
       json.attendeesCount event.attendee_ids.count
     end

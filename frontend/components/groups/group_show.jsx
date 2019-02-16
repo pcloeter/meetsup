@@ -9,7 +9,7 @@ class GroupShow extends React.Component {
     this.notMember = this.notMember.bind(this);
     this.organizedGroup = this.organizedGroup.bind(this);
     this.whichButton = this.whichButton.bind(this);
-    this.state = {true: true};
+    this.groupEventsShow = this.groupEventsShow.bind(this);
   }
 
   componentDidMount() {
@@ -20,7 +20,6 @@ class GroupShow extends React.Component {
   organizedGroup () {
     return (
       <button onClick={() => this.props.deleteGroup(this.props.match.params.groupId).then( () => {
-        debugger
        this.props.history.push('/groups')})}
       className="membership-leave">Delete Group</button>
     )
@@ -51,35 +50,38 @@ class GroupShow extends React.Component {
   }
   
   groupEventsShow () {
+    debugger
+    if (!this.props.group.events) { return null };
     if (this.props.group.eventsCount === 0 ) {
       return <li>{this.props.group.name} has no events scheduled! :-( </li>
-    } else {
-      this.props.group.events.slice(2).forEach( event => {
+      } else {
+      this.props.group.events.slice(1).forEach( event => {
         return (
-          <div className="groupEventContainer">
-          <div className="groupEventInfo">
+          <li>
+          <div className="group-event-container">
+          <div className="group-event-info">
             <div>
               <span>{event.date}</span>
               <span>{event.time}</span>
               <span>{event.title}</span>
               <span>{event.address}</span>
             </div>
-            <div>
-              <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
-
-            </div>
+            <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
           </div>
-          <p className="groupEventDescription">{event.description}</p>
-          <div className="groupEventAttend">
-            <div>
-
-            </div>
+          <p className="group-event-description">{event.description}</p>
+          <div className="group-event-attend">
+          <div>
+            <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
+            <span className="group">{event.attendeesCount} Attendees</span>
+          </div>
+          <button>Attend</button>
           </div>
           </div>
+          </li>
         )
       })
     }
-  }
+  };
 
   
   render () {
@@ -105,9 +107,6 @@ class GroupShow extends React.Component {
           </li>
       )
     });
-    
-    
-
     return (
       <div>
 
@@ -143,9 +142,9 @@ class GroupShow extends React.Component {
             </div>
 
             <div className="group-events">
-              <h2>Upcoming Events</h2>
+              <h2>Upcoming Events ({this.props.group.eventsCount})</h2>
               <ul className="group-events-list">
-                {/* <li>{this.props.group.name} has no events scheduled! :-( </li> */}
+                {this.groupEventsShow()}
               </ul>
             </div>
 
