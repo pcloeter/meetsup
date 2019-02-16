@@ -50,14 +50,14 @@ class GroupShow extends React.Component {
   }
   
   groupEventsShow () {
-    debugger
     if (!this.props.group.events) { return null };
     if (this.props.group.eventsCount === 0 ) {
       return <li>{this.props.group.name} has no events scheduled! :-( </li>
       } else {
-      this.props.group.events.slice(1).forEach( event => {
-        return (
-          <li>
+        const event = this.props.group.events.slice(0, 1)[0];
+          return(
+
+          <li>hello
           <div className="group-event-container">
           <div className="group-event-info">
             <div>
@@ -79,8 +79,8 @@ class GroupShow extends React.Component {
           </div>
           </li>
         )
-      })
-    }
+      
+     }
   };
 
   
