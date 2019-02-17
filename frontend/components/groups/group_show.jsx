@@ -71,26 +71,25 @@ class GroupShow extends React.Component {
       return <li id="noEvents">{this.props.group.name} has no events scheduled! :-( </li>
         
       } else {
-        const eventItems = this.props.group.events.slice(0, 2).map( event => {
-          const eventPicId = (event.group_id + 2);
+        const eventItems = this.props.group.events.slice(0, 1).map( event => {
+          const eventPicId = (event.id + 2);
 
         return(
-        <li>
+        <li className="group-events-show" key={event.id}>
         <div className="group-event-container">
         <div className="group-event-info">
-          <div>
-            <span>{event.date}</span>
-            <span>{event.time}</span>
-            <span>{event.title}</span>
-            <span>{event.address}</span>
+          <div className="group-event-details">
+            <span id="date">{event.date} {event.time}</span>
+            <span id="title">{event.title}</span>
+            <span id="address">{event.address}</span>
           </div>
           <img src={this.whichPicture(eventPicId)}/>
         </div>
-        <p className="group-event-description">{event.details}</p>
+        <p id="group-event-description">{event.details}</p>
         <div className="group-event-attend">
-        <div>
+        <div id="attending">
           <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
-          <span className="group">{event.attendeesCount} Attendees</span>
+          <span className="attendees">&nbsp; {event.attendeesCount} Attendees</span>
         </div>
         <button>Attend</button>
         </div>
