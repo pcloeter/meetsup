@@ -10,6 +10,7 @@ class GroupShow extends React.Component {
     this.organizedGroup = this.organizedGroup.bind(this);
     this.whichButton = this.whichButton.bind(this);
     this.groupEventsShow = this.groupEventsShow.bind(this);
+    this.whichPicture = this.whichPicture.bind(this);
   }
 
   componentDidMount() {
@@ -48,57 +49,64 @@ class GroupShow extends React.Component {
       return this.notMember();
     }
   }
+
+  whichPicture (id) {
+    if (id % 10 === 9) { var img = `/img8.jpg`; }
+    else if (id % 10 === 8) { var img = `/img9.jpg`; }
+    else if (id % 10 === 7) { var img = `/img7.jpg`; }
+    else if (id % 10 === 6) { var img = `/img6.jpg`; }
+    else if (id % 10 === 5) { var img = `/img5.jpg`; }
+    else if (id % 10 === 4) { var img = `/img4.jpg`; }
+    else if (id % 10 === 3) { var img = `/img3.jpg`; }
+    else if (id % 10 === 2) { var img = `/img2.jpg`; }
+    else if (id % 10 === 1) { var img = `/img1.jpg`; }
+    else { var img = `/img0.jpg`; }
+
+    return img;
+  }
   
   groupEventsShow () {
     if (!this.props.group.events) { return null };
     if (this.props.group.eventsCount === 0 ) {
-      return <li>{this.props.group.name} has no events scheduled! :-( </li>
+      return <li id="noEvents">{this.props.group.name} has no events scheduled! :-( </li>
+        
       } else {
-        const event = this.props.group.events.slice(0, 1)[0];
-          return(
+        const eventItems = this.props.group.events.slice(0, 2).map( event => {
+          const eventPicId = (event.group_id + 2);
 
-          <li>hello
-          <div className="group-event-container">
-          <div className="group-event-info">
-            <div>
-              <span>{event.date}</span>
-              <span>{event.time}</span>
-              <span>{event.title}</span>
-              <span>{event.address}</span>
-            </div>
-            <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
-          </div>
-          <p className="group-event-description">{event.description}</p>
-          <div className="group-event-attend">
+        return(
+        <li>
+        <div className="group-event-container">
+        <div className="group-event-info">
           <div>
-            <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
-            <span className="group">{event.attendeesCount} Attendees</span>
+            <span>{event.date}</span>
+            <span>{event.time}</span>
+            <span>{event.title}</span>
+            <span>{event.address}</span>
           </div>
-          <button>Attend</button>
-          </div>
-          </div>
-          </li>
+          <img src={this.whichPicture(eventPicId)}/>
+        </div>
+        <p className="group-event-description">{event.details}</p>
+        <div className="group-event-attend">
+        <div>
+          <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
+          <span className="group">{event.attendeesCount} Attendees</span>
+        </div>
+        <button>Attend</button>
+        </div>
+        </div>
+        </li>
         )
-      
-     }
+      })
+      return eventItems;
+    }
   };
 
   
   render () {
     if (!this.props.group) { return null };
-    
-    const group = this.props.group
-      if (group.id % 10 === 9) { var img = `/img8.jpg`; }
-      else if (group.id % 10 === 8) { var img = `/img9.jpg`; }
-      else if (group.id % 10 === 7) { var img = `/img7.jpg`; }
-      else if (group.id % 10 === 6) { var img = `/img6.jpg`; }
-      else if (group.id % 10 === 5) { var img = `/img5.jpg`; }
-      else if (group.id % 10 === 4) { var img = `/img4.jpg`; }
-      else if (group.id % 10 === 3) { var img = `/img3.jpg`; }
-      else if (group.id % 10 === 2) { var img = `/img2.jpg`; }
-      else if (group.id % 10 === 1) { var img = `/img1.jpg`; }
-      else { var img = `/img0.jpg`; }
 
+    const groupId = this.props.group.id;
     const groupMembers = this.props.members.map(member => {
       return (
           <li key={member.id}>
@@ -112,7 +120,7 @@ class GroupShow extends React.Component {
 
       <div className="main-top">
         <div className="show-head-container">
-            <img style={{backgroundImage: `url(${img})`}}className="group-show-pic" />
+            <img style={{backgroundImage: `url(${this.whichPicture(groupId)})`}}className="group-show-pic" />
             <div className="group-show-info">
               <p className="group-title">{this.props.group.name}</p>
               <p className="show-info">&#127760; {this.props.group.city}</p>
