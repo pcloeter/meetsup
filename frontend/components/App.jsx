@@ -10,6 +10,7 @@ import CreateGroupContainer from './groups/create_group_container';
 import GroupShowContainer from './groups/group_show_container';
 import FooterContainer from './footer/footer_container';
 import CreateEventContainer from './events/create_event_container';
+import EventIndexContainer from './events/event_index_container';
 
 const App = () => (
   <div>
@@ -24,7 +25,9 @@ const App = () => (
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <ProtectedRoute exact path="/groups/:groupId" component={GroupShowContainer} />
-      <Route exact path="/groups/:groupId/events" component={CreateEventContainer} />
+      <ProtectedRoute exact path="/groups/:groupId/events/create" component={CreateEventContainer} />
+      <ProtectedRoute exact path="/groups/:groupId/events/" component={EventIndexContainer} />
+
     </Switch>
 
     <footer>

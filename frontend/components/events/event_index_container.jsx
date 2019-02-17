@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import {fetchGroup, deleteGroup} from "../../actions/group_actions";
-import GroupShow from "./group_show";
+import EventIndex from "./event_index";
 import { createMembership, deleteMembership } from '../../actions/membership_actions';
 
 const msp = (state, ownProps) => {
@@ -35,4 +35,4 @@ const mdp = (dispatch) => {
 }
 
 
-export default connect(msp, mdp)(GroupShow);
+export default connect(msp, mdp)(EventIndex);

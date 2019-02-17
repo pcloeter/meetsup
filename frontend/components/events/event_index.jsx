@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class GroupShow extends React.Component {
+class EventIndex extends React.Component {
  
   constructor (props) {
     super(props);
@@ -9,7 +9,7 @@ class GroupShow extends React.Component {
     this.notMember = this.notMember.bind(this);
     this.organizedGroup = this.organizedGroup.bind(this);
     this.whichButton = this.whichButton.bind(this);
-    this.groupEventsShow = this.groupEventsShow.bind(this);
+    this.eventIndexShow = this.eventIndexShow.bind(this);
     this.whichPicture = this.whichPicture.bind(this);
   }
 
@@ -65,13 +65,13 @@ class GroupShow extends React.Component {
     return img;
   }
   
-  groupEventsShow () {
+  eventIndexShow () {
     if (!this.props.group.events) { return null };
     if (this.props.group.eventsCount === 0 ) {
       return <li id="noEvents">{this.props.group.name} has no events scheduled! :-( </li>
         
       } else {
-        const eventItems = this.props.group.events.slice(0, 1).map( event => {
+        const eventItems = this.props.group.events.map( event => {
           const eventPicId = (event.id + 5);
 
         return(
@@ -140,45 +140,18 @@ class GroupShow extends React.Component {
           </div>
         </div>
 
-<div className="main-bottom">
-        <div className="show-content-container">
-          <div className="show-left">
-            <div className="group-about">
-              <h2>What we're about</h2>
-              <p>{this.props.group.description}</p>
-            </div>
-
-            <div className="group-events">
-              <h2>Upcoming Events ({this.props.group.eventsCount})</h2>
-              <ul className="group-events-list">
-                {this.groupEventsShow()}
-              </ul>
-            </div>
-
-          </div>
-
-          <div className="show-right">
-
-            <div className="group-organizer">
-              <h2>Organizer</h2>
-              <img className="organizer-pic" src="https://image.flaticon.com/icons/svg/145/145850.svg"/>
-              <p>{this.props.organizer.name}</p>
-            </div>
-
-            <div className="group-members">
-              <h2>Members ({this.props.group.membersCount})</h2>
-                <ul>{groupMembers}</ul>
-            </div>
-
-          </div>
-
-         </div>
-        </div>
-
+      <div className="main-bottom">
+      <div className="show-content-container">
+      <div className="events-left"><h3>Upcoming</h3></div>
+      <ul className="group-events-list">
+        {this.eventIndexShow()}
+      </ul>
       </div>
+      </div>
+
+    </div>
     )
   }
-
 }
 
-export default GroupShow;
+export default EventIndex;
