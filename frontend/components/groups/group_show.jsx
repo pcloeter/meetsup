@@ -81,7 +81,7 @@ class GroupShow extends React.Component {
           <div className="group-event-details">
             <span id="date">{event.date} {event.time}</span>
             <span id="title">{event.title}</span>
-            <span id="address">{event.address}</span>
+            <span id="address">	&#x261e; {event.address}</span>
           </div>
           <img src={this.whichPicture(eventPicId)}/>
         </div>
