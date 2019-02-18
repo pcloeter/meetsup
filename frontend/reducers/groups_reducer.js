@@ -9,7 +9,7 @@ const groupsReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_GROUPS:
       return action.groups;
-
+    
     case RECEIVE_MEMBERSHIP: 
     case RECEIVE_GROUP:
       return merge({}, oldState, action.group );

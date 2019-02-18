@@ -40,6 +40,7 @@ class EventIndex extends React.Component {
     )
   }
 
+  
   whichButton () {
     if (this.props.currentUser.id === this.props.organizer.id) {
       return this.organizedGroup();
@@ -49,6 +50,24 @@ class EventIndex extends React.Component {
       return this.notMember();
     }
   }
+  
+  notAttending (eventId) {
+    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(eventId))}
+      className="rsvp-attending">Attend</button>
+  }
+
+  alreadyAttending (eventId) {
+    return <button onClick={() => this.props.deleteRsvp(eventId).then( () => this.props.fetchGroup(this.props.match.params.groupId))}
+    className="rsvp-attending">Can't make it</button>
+  }
+
+  whichRsvpButton (event) {
+    if (event.attendeeIds.includes(this.props.currentUser.id)) {
+      return this.alreadyAttending(event.id)
+    } else {
+      return this.notAttending(event.id)
+    }
+  };
 
   whichPicture (id) {
     if (id % 10 === 9) { var img = `/img8.jpg`; }
@@ -91,7 +110,7 @@ class EventIndex extends React.Component {
           <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
           <span className="attendees">&nbsp; {event.attendeesCount} Attendees</span>
         </div>
-        <button>Attend</button>
+        {this.whichRsvpButton(event)}
         </div>
         </div>
         </li>

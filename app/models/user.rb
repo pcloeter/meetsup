@@ -41,6 +41,10 @@ class User < ApplicationRecord
   class_name: :Rsvp,
   foreign_key: :user_id
 
+  has_many :events,
+  through: :rsvps,
+  source: :event
+
   
 
   def self.generate_session_token

@@ -6,9 +6,9 @@ export const createRsvp = (eventId) => {
 }
 
 
-export const deleteRsvp = (eventId) => {
+export const deleteRsvp = (rsvpId) => {
   return $.ajax({
     method: "delete",
-    url: `api/events/${eventId}/rsvps/1`
+    url: `api/events/${rsvpId}/rsvps/1`
   })
 }
