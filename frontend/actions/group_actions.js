@@ -11,11 +11,12 @@ const receiveAllGroups = (groups) => {
   }
 }
 
-const receiveGroup = ({group, users}) => {
+const receiveGroup = ({group, users, events}) => {
   return {
     type: RECEIVE_GROUP,
     group,
-    users
+    users,
+    events,
   }
 }
 
@@ -59,9 +60,7 @@ export const updateGroup = (group) => {
 
 export const deleteGroup = (id) => {
   return (dispatch) => {
-    debugger
     return GroupApiUtil.deleteGroup(id).then( () => {
-      debugger
       return dispatch(removeGroup(id))
     })
   }

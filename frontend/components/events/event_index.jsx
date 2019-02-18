@@ -53,12 +53,12 @@ class EventIndex extends React.Component {
   
   notAttending (eventId) {
     return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(eventId))}
-      className="rsvp-attending">Attend</button>
+      className="rsvp-no">Attend</button>
   }
 
   alreadyAttending (eventId) {
     return <button onClick={() => this.props.deleteRsvp(eventId).then( () => this.props.fetchGroup(this.props.match.params.groupId))}
-    className="rsvp-attending">Can't make it</button>
+    className="rsvp-yes"><i class="fas fa-times-circle"></i> Can't go</button>
   }
 
   whichRsvpButton (event) {
@@ -85,12 +85,12 @@ class EventIndex extends React.Component {
   }
   
   eventIndexShow () {
-    if (!this.props.group.events) { return null };
+    if (!this.props.events) { return null };
     if (this.props.group.eventsCount === 0 ) {
       return <li id="noEvents">{this.props.group.name} has no events scheduled! :-( </li>
         
       } else {
-        const eventItems = this.props.group.events.map( event => {
+        const eventItems = this.props.events.map( event => {
           const eventPicId = (event.id + 5);
 
         return(

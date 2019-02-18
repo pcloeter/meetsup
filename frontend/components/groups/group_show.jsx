@@ -50,6 +50,24 @@ class GroupShow extends React.Component {
     }
   }
 
+  notAttending (eventId) {
+    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(eventId))}
+      className="rsvp-no">Attend</button>
+  }
+
+  alreadyAttending (eventId) {
+    return <button onClick={() => this.props.deleteRsvp(eventId).then( () => this.props.fetchGroup(this.props.match.params.groupId))}
+    className="rsvp-yes"><i class="fas fa-times-circle"></i> Can't go</button>
+  }
+
+  whichRsvpButton (event) {
+    if (event.attendeeIds.includes(this.props.currentUser.id)) {
+      return this.alreadyAttending(event.id)
+    } else {
+      return this.notAttending(event.id)
+    }
+  };
+
   whichPicture (id) {
     if (id % 10 === 9) { var img = `/img8.jpg`; }
     else if (id % 10 === 8) { var img = `/img9.jpg`; }
@@ -66,12 +84,12 @@ class GroupShow extends React.Component {
   }
   
   groupEventsShow () {
-    if (!this.props.group.events) { return null };
+    if (!this.props.events) { return null };
     if (this.props.group.eventsCount === 0 ) {
       return <li id="noEvents">{this.props.group.name} has no events scheduled! :-( </li>
         
       } else {
-        const eventItems = this.props.group.events.slice(0, 1).map( event => {
+        const eventItems = this.props.events.slice(0, 1).map( event => {
           const eventPicId = (event.id + 5);
 
         return(
@@ -91,7 +109,7 @@ class GroupShow extends React.Component {
           <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
           <span className="attendees">&nbsp; {event.attendeesCount} Attendees</span>
         </div>
-        <button>Attend</button>
+        {this.whichRsvpButton(event)}
         </div>
         </div>
         </li>

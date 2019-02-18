@@ -4,6 +4,7 @@ import GroupShow from "./group_show";
 import { createMembership, deleteMembership } from '../../actions/membership_actions';
 import { createRsvp, deleteRsvp} from '../../actions/rsvp_actions';
 
+
 const msp = (state, ownProps) => {
   if (state.entities.groups[ownProps.match.params.groupId]) {
     var group = state.entities.groups[ownProps.match.params.groupId];
@@ -13,6 +14,12 @@ const msp = (state, ownProps) => {
     var organizer = {};
   }
   
+  if (state.entities.events) {
+    var events = Object.values(state.entities.events);
+  } else {
+    var events = {};
+  }
+
   const members = group.memberIds.map( id => {
     const user = state.entities.users[id]
     return user
@@ -20,6 +27,7 @@ const msp = (state, ownProps) => {
 
   return {
     group,
+    events,
     organizer,
     members,
     currentUser: state.entities.users[state.session.id],

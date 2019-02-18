@@ -5,7 +5,12 @@ json.group do
     json.membersCount @group.member_ids.count
     json.eventsCount @group.events.count
     json.organizer @group.organizer
-    json.events @group.events do |event|
+  end
+end
+
+json.events do
+  @group.events.each do |event|
+    json.set! event.id do
       json.id event.id
       json.partial! 'api/events/event', event: event
       json.attendeeIds event.attendee_ids

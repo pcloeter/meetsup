@@ -14,7 +14,6 @@ class Api::RsvpsController < ApplicationController
     @rsvp = Rsvp.find_by(user_id: current_user.id, event_id: params[:event_id])
     @rsvp.delete
     @event = Event.find(params[:event_id])
-debugger
     render 'api/events/show'
   end
 

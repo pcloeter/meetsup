@@ -1,5 +1,4 @@
 json.user do
-  debugger
   json.set! @rsvp.user_id do
     json.id @rsvp.user_id
     json.eventIds @rsvp.attendee.event_ids

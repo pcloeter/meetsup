@@ -13,6 +13,12 @@ const msp = (state, ownProps) => {
     var organizer = {};
   }
   
+  if (state.entities.events) {
+    var events = Object.values(state.entities.events);
+  } else {
+    var events = {};
+  }
+
   const members = group.memberIds.map( id => {
     const user = state.entities.users[id]
     return user
@@ -20,6 +26,7 @@ const msp = (state, ownProps) => {
 
   return {
     group,
+    events,
     organizer,
     members,
     currentUser: state.entities.users[state.session.id],
