@@ -8,6 +8,8 @@
 User.destroy_all
 Group.destroy_all
 Membership.destroy_all
+Event.destroy_all
+Rsvp.destroy_all
 
 
 user1 = User.create!(
