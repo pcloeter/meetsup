@@ -142,7 +142,7 @@ class EventIndex extends React.Component {
 
       <div className="main-bottom">
       <div className="show-content-container">
-      <div className="events-left"><h3>Upcoming</h3></div>
+      <div className="events-left"><h3>&nbsp; Upcoming</h3></div>
       <ul className="group-events-list">
         {this.eventIndexShow()}
       </ul>

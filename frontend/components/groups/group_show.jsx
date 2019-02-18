@@ -35,7 +35,7 @@ class GroupShow extends React.Component {
 
   notMember () {
     return (
-      <button onClick={() => this.props.createMembership(this.props.match.params.groupId).then( () => this.props.history.push(this.props.group.id))} 
+      <button onClick={() => this.props.createMembership(this.props.match.params.groupId).then( () => this.props.fetchGroup(this.props.match.params.groupId))} 
       className="membership-join">Join Group</button>  
     )
   }
