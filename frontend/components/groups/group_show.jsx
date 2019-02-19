@@ -17,7 +17,7 @@ class GroupShow extends React.Component {
     this.props.fetchGroup(this.props.match.params.groupId)
   }
 
-
+ 
   organizedGroup () {
     return (
       <button onClick={() => this.props.deleteGroup(this.props.match.params.groupId).then( () => {
@@ -51,7 +51,7 @@ class GroupShow extends React.Component {
   }
 
   notAttending (eventId) {
-    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(eventId))}
+    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(`events/${eventId}`))}
       className="rsvp-no">Attend</button>
   }
 

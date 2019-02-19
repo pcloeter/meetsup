@@ -11,6 +11,7 @@ class EventIndex extends React.Component {
     this.whichButton = this.whichButton.bind(this);
     this.eventIndexShow = this.eventIndexShow.bind(this);
     this.whichPicture = this.whichPicture.bind(this);
+    this.createEventButton = this.createEventButton.bind(this);
   }
 
   componentDidMount() {
@@ -50,9 +51,19 @@ class EventIndex extends React.Component {
       return this.notMember();
     }
   }
+
+  createEventButton () {
+    if (this.props.currentUser.id === this.props.organizer.id)  {
+      return(
+        <button onClick={() => this.props.history.push('/events/create')}
+        className="membership-join">Create Event</button>
+      )
+    }
+  }
   
   notAttending (eventId) {
-    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(eventId))}
+    debugger
+    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(`/${eventId}`))}
       className="rsvp-no">Attend</button>
   }
 
@@ -155,6 +166,7 @@ class EventIndex extends React.Component {
           <Link to={`/groups/${this.props.group.id}/members`}className="group-menu-item">Members</Link>
           <div>
           {this.whichButton()}
+          {this.createEventButton()}
           </div>
           </div>
         </div>
