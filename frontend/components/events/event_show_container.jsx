@@ -5,7 +5,6 @@ import { fetchEvent } from '../../actions/event_actions';
 
 
 const msp = ( state, ownProps ) => {
-  debugger
   if (state.entities.events[ownProps.match.params.eventId]) {
     var event = state.entities.events[ownProps.match.params.eventId];
     var host = state.entities.events[ownProps.match.params.eventId].host;
