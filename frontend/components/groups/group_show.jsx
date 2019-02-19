@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class GroupShow extends React.Component {
  
@@ -11,6 +12,7 @@ class GroupShow extends React.Component {
     this.whichButton = this.whichButton.bind(this);
     this.groupEventsShow = this.groupEventsShow.bind(this);
     this.whichPicture = this.whichPicture.bind(this);
+    this.reroute = this.reroute.bind(this);
   }
 
   componentDidMount() {
@@ -51,7 +53,7 @@ class GroupShow extends React.Component {
   }
 
   reroute (eventId, groupId) {
-    this.props.history.push(`/group/${groupId}/events/${eventId}`);
+    this.props.history.push(`/groups/${groupId}/events/${eventId}`);
   }
   
   notAttending (eventId, groupId) {
@@ -203,4 +205,4 @@ class GroupShow extends React.Component {
 
 }
 
-export default GroupShow;
+export default withRouter(GroupShow);

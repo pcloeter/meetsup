@@ -7,25 +7,26 @@ class EventShow extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchEvent(ownProps.match.params.eventId);
+    debugger
+    this.props.fetchEvent(this.props.match.params.eventId);
   }
 
   render () {
-    if (!this.props.event) { return null };
-
+    if (!this.props.event) return null;
+debugger
     return (
       <div>
         <div className="event-header-container">HELLO
-        <div className="event-header">
+        <div className="event-header">HELLO!
         <div className="event-show-info">
-          <span className="event-show-date">{this.props.event.date}</span>
-          <span className="event-show-title">{this.props.event.title}</span>
+          <span className="event-show-date"></span>
+          <span className="event-show-title"></span>
         </div>
         <div className="event-host-info">
           <img className="organizer-pic" src="https://image.flaticon.com/icons/svg/145/145850.svg"/>
           <div className="host-section">
             <span>Hosted by</span>
-            <span>{this.props.host}</span>
+            <span></span>
           </div>
         </div>
         </div>

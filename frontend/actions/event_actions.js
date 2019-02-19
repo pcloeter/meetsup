@@ -12,6 +12,7 @@ const receiveAllEvents = (events) => {
 }
 
 const receiveEvent = ({event, users}) => {
+  debugger
   return {
     type: RECEIVE_EVENT,
     event,

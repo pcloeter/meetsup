@@ -7,6 +7,7 @@ import { RECEIVE_GROUP } from '../actions/group_actions';
 const eventsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
 
+  debugger
   switch (action.type) {
     case RECEIVE_GROUP:
     case RECEIVE_EVENTS:

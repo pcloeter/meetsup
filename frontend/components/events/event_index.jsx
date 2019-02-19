@@ -64,7 +64,7 @@ class EventIndex extends React.Component {
   }
 
   reroute (eventId, groupId) {
-    this.props.history.push(`/group/${groupId}/events/${eventId}`);
+    this.props.history.push(`/groups/${groupId}/events/${eventId}`);
   }
   
   notAttending (eventId, groupId) {
