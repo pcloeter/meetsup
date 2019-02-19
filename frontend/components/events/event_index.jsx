@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 class EventIndex extends React.Component {
  
@@ -12,6 +13,7 @@ class EventIndex extends React.Component {
     this.eventIndexShow = this.eventIndexShow.bind(this);
     this.whichPicture = this.whichPicture.bind(this);
     this.createEventButton = this.createEventButton.bind(this);
+    this.reroute = this.reroute.bind(this);
   }
 
   componentDidMount() {
@@ -60,11 +62,14 @@ class EventIndex extends React.Component {
       )
     }
   }
+
+  reroute (eventId, groupId) {
+    this.props.history.push(`/group/${groupId}/events/${eventId}`);
+  }
   
-  notAttending (eventId) {
-    debugger
-    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(`/${eventId}`))}
-      className="rsvp-no">Attend</button>
+  notAttending (eventId, groupId) {
+    return <button onClick={() => this.props.createRsvp(eventId).then(this.reroute(eventId, groupId))} className="rsvp-no">Attend</button>
+    
   }
 
   alreadyAttending (eventId) {
@@ -72,11 +77,11 @@ class EventIndex extends React.Component {
     className="rsvp-yes"><i className="fas fa-times-circle"></i> Can't go</button>
   }
 
-  whichRsvpButton (event) {
+  whichRsvpButton (event, groupId) {
     if (event.attendeeIds.includes(this.props.currentUser.id)) {
       return this.alreadyAttending(event.id)
     } else {
-      return this.notAttending(event.id)
+      return this.notAttending(event.id, groupId)
     }
   };
 
@@ -121,7 +126,7 @@ class EventIndex extends React.Component {
           <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
           <span className="attendees">&nbsp; {event.attendeesCount} Attendees</span>
         </div>
-        {this.whichRsvpButton(event)}
+        {this.whichRsvpButton(event, event.group_id)}
         </div>
         </div>
         </li>
@@ -185,4 +190,4 @@ class EventIndex extends React.Component {
   }
 }
 
-export default EventIndex;
+export default withRouter(EventIndex);

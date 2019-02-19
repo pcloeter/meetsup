@@ -50,9 +50,13 @@ class GroupShow extends React.Component {
     }
   }
 
-  notAttending (eventId) {
-    return <button onClick={() => this.props.createRsvp(eventId).then( () => this.props.history.push(`events/${eventId}`))}
-      className="rsvp-no">Attend</button>
+  reroute (eventId, groupId) {
+    this.props.history.push(`/group/${groupId}/events/${eventId}`);
+  }
+  
+  notAttending (eventId, groupId) {
+    return <button onClick={() => this.props.createRsvp(eventId).then(this.reroute(eventId, groupId))} className="rsvp-no">Attend</button>
+    
   }
 
   alreadyAttending (eventId) {
@@ -60,11 +64,11 @@ class GroupShow extends React.Component {
     className="rsvp-yes"><i className="fas fa-times-circle"></i> Can't go</button>
   }
 
-  whichRsvpButton (event) {
+  whichRsvpButton (event, groupId) {
     if (event.attendeeIds.includes(this.props.currentUser.id)) {
       return this.alreadyAttending(event.id)
     } else {
-      return this.notAttending(event.id)
+      return this.notAttending(event.id, groupId)
     }
   };
 
@@ -109,7 +113,7 @@ class GroupShow extends React.Component {
           <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
           <span className="attendees">&nbsp; {event.attendeesCount} Attendees</span>
         </div>
-        {this.whichRsvpButton(event)}
+        {this.whichRsvpButton(event, event.group_id)}
         </div>
         </div>
         </li>

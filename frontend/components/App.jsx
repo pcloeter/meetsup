@@ -28,7 +28,7 @@ const App = () => (
       <ProtectedRoute exact path="/groups/:groupId" component={GroupShowContainer} />
       <ProtectedRoute exact path="/groups/:groupId/events/create" component={CreateEventContainer} />
       <ProtectedRoute exact path="/groups/:groupId/events/" component={EventIndexContainer} />
-      <ProtectedRoute exact path="/groups/:groupId/events/eventId" component={EventShowContainer} />
+      <ProtectedRoute exact path="/groups/:groupId/events/:eventId" component={EventShowContainer} />
 
     </Switch>
 

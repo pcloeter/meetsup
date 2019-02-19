@@ -6,13 +6,16 @@ class EventShow extends React.Component {
     super(props);
   }
 
+  componentDidMount () {
+    this.props.fetchEvent(ownProps.match.params.eventId);
+  }
 
   render () {
     if (!this.props.event) { return null };
 
     return (
       <div>
-        <div className="event-header-container">
+        <div className="event-header-container">HELLO
         <div className="event-header">
         <div className="event-show-info">
           <span className="event-show-date">{this.props.event.date}</span>

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { createRsvp, deleteRsvp} from '../../actions/rsvp_actions';
 import EventShow from './event_show';
+import { fetchEvent } from '../../util/event_api_util';
 
 
 const msp = ( state ) => {
@@ -26,6 +27,7 @@ const mdp = ( dispatch ) => {
     createRsvp: (eventId) => dispatch(createRsvp(eventId)),
     deleteRsvp: (rsvpId) => dispatch(deleteRsvp(rsvpId)),
     deleteEvent: (eventId) => dispatch(deleteEvent(eventId)),
+    fetchEvent: (eventId) => dispatch(fetchEvent(eventId)),
   }
 }
 

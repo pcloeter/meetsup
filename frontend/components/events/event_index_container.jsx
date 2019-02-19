@@ -4,6 +4,7 @@ import EventIndex from "./event_index";
 import { createMembership, deleteMembership } from '../../actions/membership_actions';
 import { createRsvp, deleteRsvp} from '../../actions/rsvp_actions';
 
+
 const msp = (state, ownProps) => {
   if (state.entities.groups[ownProps.match.params.groupId]) {
     var group = state.entities.groups[ownProps.match.params.groupId];
@@ -30,6 +31,7 @@ const msp = (state, ownProps) => {
     organizer,
     members,
     currentUser: state.entities.users[state.session.id],
+    history: ownProps.history,
   }
 };
 
