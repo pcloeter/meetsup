@@ -58,7 +58,7 @@ class EventIndex extends React.Component {
 
   alreadyAttending (eventId) {
     return <button onClick={() => this.props.deleteRsvp(eventId).then( () => this.props.fetchGroup(this.props.match.params.groupId))}
-    className="rsvp-yes"><i class="fas fa-times-circle"></i> Can't go</button>
+    className="rsvp-yes"><i className="fas fa-times-circle"></i> Can't go</button>
   }
 
   whichRsvpButton (event) {
