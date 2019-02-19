@@ -16,7 +16,7 @@ user1 = User.create!(
   name: "Ursula",
   password_digest: BCrypt::Password.create('password'),
   email: 'ursula@gmail.com',
-  session_token: "12345",
+  session_token: "23453",
   created_at: "sometime",
   updated_at: "another time"
   )
@@ -26,7 +26,7 @@ user2 = User.create!(
   name: "Vader",
   password_digest: BCrypt::Password.create('password'),
   email: 'darthv@gmail.com',
-  session_token: "12345",
+  session_token: "34583",
   created_at: "sometime",
   updated_at: "another time"
   )
@@ -35,7 +35,7 @@ user3 = User.create!(
   name: "Scar",
   password_digest: BCrypt::Password.create('password'),
   email: 'scar@gmail.com',
-  session_token: "12345",
+  session_token: "26647",
   created_at: "sometime",
   updated_at: "another time"
 )
@@ -44,7 +44,7 @@ user4 = User.create!(
   name: "Jafar",
   password_digest: BCrypt::Password.create('password'),
   email: 'jafar@gmail.com',
-  session_token: "12345",
+  session_token: "53467",
   created_at: "sometime",
   updated_at: "another time"
 )
@@ -111,11 +111,6 @@ Membership.create!(
   user_id: user3.id,
   group_id: group2.id
 )
-
-Membership.create!(
-  member: user1,
-  group: group1
-  )
 
 Membership.create!(
   user_id: user2.id,
