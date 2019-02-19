@@ -89,7 +89,7 @@ class LoginForm extends React.Component {
             </form>
 
         <div className="alt-buttons-container">
-        <button onClick={() => this.props.formAction({email: "darthv@gmail.com", password: 'hellothere'})} className="demo-button">Log in with Demo User</button>
+        <button onClick={() => this.props.formAction({email: "darthv@gmail.com", password: 'password'})} className="demo-button">Log in with Demo User</button>
         </div>
         </div>
       </div>

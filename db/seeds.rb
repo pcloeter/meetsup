@@ -14,7 +14,7 @@ Rsvp.destroy_all
 
 user1 = User.create!(
   name: "Ursula",
-  password_digest: BCrypt::Password.create('hellothere'),
+  password_digest: BCrypt::Password.create('password'),
   email: 'ursula@gmail.com',
   session_token: "12345",
   created_at: "sometime",
@@ -24,7 +24,7 @@ user1 = User.create!(
   
 user2 = User.create!(
   name: "Vader",
-  password_digest: BCrypt::Password.create('hellothere'),
+  password_digest: BCrypt::Password.create('password'),
   email: 'darthv@gmail.com',
   session_token: "12345",
   created_at: "sometime",
@@ -33,7 +33,7 @@ user2 = User.create!(
     
 user3 = User.create!(
   name: "Scar",
-  password_digest: BCrypt::Password.create('hellothere'),
+  password_digest: BCrypt::Password.create('password'),
   email: 'scar@gmail.com',
   session_token: "12345",
   created_at: "sometime",
@@ -42,7 +42,7 @@ user3 = User.create!(
 
 user4 = User.create!(
   name: "Jafar",
-  password_digest: BCrypt::Password.create('hellothere'),
+  password_digest: BCrypt::Password.create('password'),
   email: 'jafar@gmail.com',
   session_token: "12345",
   created_at: "sometime",
@@ -51,7 +51,7 @@ user4 = User.create!(
 
 user5 = User.create!(
   name: "Gaston",
-  password_digest: BCrypt::Password.create('hellothere'),
+  password_digest: BCrypt::Password.create('password'),
   email: 'gaston@gmail.com',
   session_token: "12345",
   created_at: "sometime",
