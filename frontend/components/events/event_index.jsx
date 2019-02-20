@@ -168,7 +168,7 @@ class EventIndex extends React.Component {
         <div className="group-menu-container">
           <Link to={`/groups/${this.props.group.id}`}className="group-menu-item">About</Link>
           <Link to={`/groups/${this.props.group.id}/events`}className="group-menu-item">Events</Link>
-          <Link to={`/groups/${this.props.group.id}/members`}className="group-menu-item">Members</Link>
+          {/* <Link to={`/groups/${this.props.group.id}/members`}className="group-menu-item">Members</Link> */}
           <div>
           {this.whichButton()}
           {this.createEventButton()}
