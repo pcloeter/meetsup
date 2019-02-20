@@ -5,7 +5,7 @@ json.event do
     json.attendeesCount @event.attendee_ids.count
     json.attendees @event.attendees
     json.host @event.host
-
+    json.group @event.group
   end
 end
 

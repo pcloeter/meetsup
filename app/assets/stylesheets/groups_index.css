@@ -83,7 +83,11 @@
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 800;
-  text-shadow: 2px 2px 3px black;
+  text-shadow: 		
+    -1px -1px 2px #000,
+    1px -1px 2px #000,
+    -1px 1px 2px #000,
+    1px 1px 2px #000;
 }
   
   
@@ -96,7 +100,11 @@
     margin-left: 10px;
     margin-bottom: 16px;
     margin-top: 0;
-    text-shadow: 2px 2px 3px rgb(8, 0, 0);
+    text-shadow: 		
+    -1px -1px 2px #000,
+    1px -1px 2px #000,
+    -1px 1px 2px #000,
+    1px 1px 2px #000;
     }
 
 .main-groups-container li:hover {

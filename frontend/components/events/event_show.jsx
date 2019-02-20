@@ -82,6 +82,17 @@ class EventShow extends React.Component {
 
   render () {
     if (!this.props.event.host) return null;
+    const eventPicId = (this.props.event.id + 5);
+
+    const eventAttendees = this.props.event.attendees.map(attendee => {
+      return (
+          <li key={attendee.id}>
+            <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
+            <p>{attendee.name}</p>
+          </li>
+      )
+    });
+
     return (
       <>
       <div className="top-event-container">
@@ -106,9 +117,34 @@ class EventShow extends React.Component {
           </div>
           <div className="rsvp-buttons"></div>
             {this.toggleButtons()}
+        </div>   
         </div>
-            
+      </div>
+
+      <div className="main-event-bottom">
+      <div className="event-bottom-container">
+        <div className="event-bottom-left">
+          <div className="img-div">
+            <img src={this.whichPicture(eventPicId)} alt=""/>
+          </div>
+          <div className="event-show-details">Details:
+            <p>{this.props.event.details}</p>
+          </div>
+          <div className="event-attendees">
+            <h2>Attendees ({this.props.event.attendeesCount})</h2>
+              <ul>{eventAttendees}</ul>
+          </div>
         </div>
+        <div className="event-bottom-right">
+          <div className="event-group-info">
+            <img src={this.whichPicture(this.props.event.group_id)} alt=""/>
+            <div>
+              <span className="event-show-group-title">{this.props.event.group.name}</span>
+              <span className="group-type">Public Group</span>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
       </>
     )
