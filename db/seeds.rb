@@ -168,6 +168,47 @@ event2 = Event.create!(
   address: "Exchange Place PATH Station",
 )
 
+event3 = Event.create!(
+  host_id: user1.id,
+  group_id: group1.id,
+  title: "Pecan Praline Pig-Out!",
+  details: "Our upcoming event is going to be overwhelming. We will attempt to alieviate Baskin Robbins of their entire stock of the above mentioned flavor. Please come and help us succeed in this mission.",
+  address: "Port Authority Bus Terminal Baskin Robbins"
+)
+
+event4 = Event.create!(
+  host_id: user1.id,
+  group_id: group1.id,
+  title: "Coney Island Cone Fest",
+  details: "Regardless of the weather, join us for a stroll down the boardwalk at the atmospheric and nostalgic Coney Island. We're going to eat a very large quantity of ice cream cones, and then go home. Seperately."
+  address: "Coney Island Boardwalk, Queens"
+)
+
+event5 = Event.create!(
+  host_id: user2.id,
+  group_id: group2.id,
+  title: "Prospect Park Run-Around",
+  details: "We'll start out in front of the Brooklyn Botanical Gardens (with the goats), and go for a leisurly 3km jog with our friends.
+    Feel free to stay and hang afterwards for some peaceful time with the goats.",
+  address: "Brooklyn Botanical Gardens- Main entrance"
+)
+
+event6 = Event.create!(
+  host_id: user4.id,
+  group_id: group4.id,
+  title: "A Reckless Winter Dip",
+  details: "The freezing temperatures can't keep us down-- or out --of our Hudson! Well meet on the pier outside the famous Intrepid Museum.  Join us for a plunge down to Battery Park!",
+  address: "Intrepid Museum- Pier 86, Manhattan"
+)
+
+event7 = Event.create!(
+  host_id: user3.id,
+  group_id: group3.id,
+  title: "Monday Mindfulness",
+  details: "Join us every monday for our extremely popular Monday Mindfulness. During our sessions, we enjoy Deep Alpha compositions to encourage brainwave syncronization, as well as music from the likes of Ravi Shankar and others.",
+  address: "Manhattan Meditation Hall"
+)
+
 Rsvp.create!(
   event_id: event1.id,
   user_id: user1.id
@@ -187,4 +228,45 @@ Rsvp.create!(
 Rsvp.create!(
   event_id: event2.id,
   user_id: user4.id
+)
+
+Rsvp.create!(
+  event_id: event3.id,
+  user_id: user4.id
+)
+Rsvp.create!(
+  event_id: event3.id,
+  user_id: user4.id
+)
+Rsvp.create!(
+  event_id: event4.id,
+  user_id: user1.id
+)
+Rsvp.create!(
+  event_id: event4.id,
+  user_id: user2.id
+)
+Rsvp.create!(
+  event_id: event4.id,
+  user_id: user3.id
+)
+Rsvp.create!(
+  event_id: event5.id,
+  user_id: user1.id
+)
+Rsvp.create!(
+  event_id: event5.id,
+  user_id: user2.id
+)
+Rsvp.create!(
+  event_id: event6.id,
+  user_id: user1.id
+)
+Rsvp.create!(
+  event_id: event6.id,
+  user_id: user4.id
+)
+Rsvp.create!(
+  event_id: event7.id,
+  user_id: user3.id
 )
