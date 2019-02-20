@@ -12,10 +12,11 @@ const receiveRsvp = ({user, event}) => {
   }
 }
 
-const removeRsvp = (rsvpId) => {
+const removeRsvp = ({user, event}) => {
   return {
     type: REMOVE_RSVP,
-    rsvpId
+    user, 
+    event,
   }
 }
 
@@ -30,8 +31,8 @@ export const createRsvp = (rsvp) => {
 
 export const deleteRsvp = (eventId) => {
   return dispatch => {
-    return RsvpApiUtil.deleteRsvp(eventId).then( rsvpId => {
-      return dispatch(removeRsvp(rsvpId))
+    return RsvpApiUtil.deleteRsvp(eventId).then( rsvp => {
+      return dispatch(removeRsvp(rsvp))
     })
   };
 };
