@@ -158,6 +158,11 @@ Membership.create!(
 )
 
 Membership.create!(
+  user_id: user4.id,
+  group_id: group1.id
+)
+
+Membership.create!(
   user_id: user1.id,
   group_id: group5.id
 )
@@ -244,10 +249,7 @@ Rsvp.create!(
   event_id: event3.id,
   user_id: user4.id
 )
-Rsvp.create!(
-  event_id: event3.id,
-  user_id: user4.id
-)
+
 Rsvp.create!(
   event_id: event4.id,
   user_id: user1.id
