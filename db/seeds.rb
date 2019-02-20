@@ -123,7 +123,7 @@ Membership.create!(
 )
 
 Membership.create!(
-  user_id: user3.id,
+  user_id: user4.id,
   group_id: group3.id
 )
 
