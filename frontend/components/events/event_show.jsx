@@ -56,7 +56,6 @@ class EventShow extends React.Component {
 
   toggleButtons () {
     if (this.props.event.attendeeIds.includes(this.props.currentUser.id)) {
-      debugger
       return (
         <div className="toggle-going">
           <button className="rsvp-selected" onClick={() => this.props.createRsvp(this.props.event.id).then(() => {

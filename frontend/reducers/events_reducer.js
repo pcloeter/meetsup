@@ -17,7 +17,6 @@ const eventsReducer = (oldState = {}, action) => {
     case RECEIVE_EVENT:
       return merge({}, oldState, action.event)
     case REMOVE_RSVP:
-    debugger 
       newState[Object.keys(action.event)[0]]= Object.values(action.event)[0];
       return newState;
     case REMOVE_EVENT:
