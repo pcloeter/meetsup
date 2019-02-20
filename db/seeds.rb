@@ -114,6 +114,21 @@ Membership.create!(
 
 Membership.create!(
   user_id: user1.id,
+  group_id: group4.id
+)
+
+Membership.create!(
+  user_id: user4.id,
+  group_id: group4.id
+)
+
+Membership.create!(
+  user_id: user3.id,
+  group_id: group3.id
+)
+
+Membership.create!(
+  user_id: user1.id,
   group_id: group2.id
 )
 
