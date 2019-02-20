@@ -14,7 +14,7 @@ json.events do
       json.id event.id
       json.partial! 'api/events/event', event: event
       json.attendeeIds event.attendee_ids
-      json.attendeesCount event.attendee_ids.count
+      json.attendeesCount event.attendees.count
     end
   end
 end

@@ -2,7 +2,7 @@ json.event do
   json.set! @event.id do 
     json.partial! 'api/events/event', event: @event
     json.attendeeIds @event.attendee_ids
-    json.attendeesCount @event.attendee_ids.count
+    json.attendeesCount @event.attendees.count
     json.attendees @event.attendees
     json.host @event.host
     json.group @event.group

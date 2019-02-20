@@ -10,6 +10,6 @@ json.event do
     json.id @rsvp.event_id
     json.attendeeIds @rsvp.event.attendee_ids
     json.attendees @rsvp.event.attendees
-    json.attendeesCount @rsvp.event.attendee_ids.count
+    json.attendeesCount @rsvp.event.attendees.count
   end
 end
