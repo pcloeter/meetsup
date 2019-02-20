@@ -180,7 +180,7 @@ event4 = Event.create!(
   host_id: user1.id,
   group_id: group1.id,
   title: "Coney Island Cone Fest",
-  details: "Regardless of the weather, join us for a stroll down the boardwalk at the atmospheric and nostalgic Coney Island. We're going to eat a very large quantity of ice cream cones, and then go home. Seperately."
+  details: "Regardless of the weather, join us for a stroll down the boardwalk at the atmospheric and nostalgic Coney Island. We're going to eat a very large quantity of ice cream cones, and then go home. Seperately.",
   address: "Coney Island Boardwalk, Queens"
 )
 
