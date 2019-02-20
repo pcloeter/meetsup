@@ -113,11 +113,6 @@ Membership.create!(
 )
 
 Membership.create!(
-  user_id: user2.id,
-  group_id: group2.id
-)
-
-Membership.create!(
   user_id: user1.id,
   group_id: group2.id
 )
