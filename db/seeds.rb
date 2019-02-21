@@ -228,6 +228,11 @@ Membership.create!(
   group_id: group5.id
 )
 
+Membership.create!(
+  user_id: user1.id,
+  group_id: group1.id
+)
+
 event1 = Event.create!(
   host_id: user5.id,
   group_id: group5.id,
@@ -296,9 +301,9 @@ event8 = Event.create!(
 event9 = Event.create!(
   host_id: user5.id,
   group_id: group7.id,
-  title: "Dream-foiling Roundtabe",
-  details: "Our weekly get-together focuses on brainstorming our evil ways over cocktails, all in a relaxing environment. Bring your master plans to run by the group.",
-  address: "Ursula's Home"
+  title: "Bring Up the Lights Fridays",
+  details: "Let's shut it down. Every Friday night we shoot out a text letting you know where we'll start. Dress to make an impresssss....sion. If you can't bring up the lights with us. You're out of the group. Can you handle it?",
+  address: "TBA"
 )
 
 Rsvp.create!(
@@ -365,10 +370,7 @@ Rsvp.create!(
   event_id: event6.id,
   user_id: user1.id
 )
-Rsvp.create!(
-  event_id: event6.id,
-  user_id: user4.id
-)
+
 Rsvp.create!(
   event_id: event7.id,
   user_id: user3.id
