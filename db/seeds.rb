@@ -58,12 +58,19 @@ user5 = User.create!(
   updated_at: "another time"
 )
 
+user6 = User.create!(
+  name: "Hook",
+  password_digest: BCrypt::Password.create('password'),
+  email: 'hook@gmail.com',
+  session_token: "25788",
+)
+
 
 group1 = Group.create!(
   name: "Ice cream eaters",
   description: "We just eat ice cream all day long. It's kind of gross, but kinda cool.  You probably at least low-key want to join our group.  Come on. Just do it.",
   city: "New York",
-  organizer_id: user1.id,
+  organizer_id: user6.id,
   created_at: "sometime",
   updated_at: "another time"
 )
@@ -98,6 +105,13 @@ group4 = Group.create!(
   updated_at: "another time"
 )
 
+group6 = Group.create!(
+  name: "Chewin and Chillin",
+  description: "We're just a laid-back squad that likes to pick up some random snacks and eat them. Our organizer also started the Meet.Sup? called ICE CREAM EATERS... So you can probably see a theme here.  Come join us for Chewin and Chillin-- and bring snacks, for real",
+  city: "New York City",
+  organizer_id: user6.id,
+)
+
 group5 = Group.create!(
   name: "Tours of Sewers",
   description: "Anybody who likes what's beneath the sidewalk or likes to see the ins and outs of their town's most humble and private infrastructure.",
@@ -105,7 +119,54 @@ group5 = Group.create!(
   organizer_id: user5.id,
 )
 
+group7 = Group.create!(
+  name: "New York Nightlifers",
+  description: "Working our hardest to turn up NYC nightlife! Be wild. Be outrageous. Be fabulous. Only imaginitive risk-takers allowed.",
+  city: "Chelsea, NYC",
+  organizer_id: user1.id,
+)
 
+group8 = Group.create!(
+  name: "Princess Inhibitors",
+  description: "We enjoy getting together and thinking of all sorts of ways to stop them. Poison apples, magic mirrors and all other techniques discussed-- we are an open-minded group. No spell shaming tolerated.  Bring your tips and tricks and let's end their beautful nonesense.",
+  city: "Battery Park, New York",
+  organizer_id: user1.id,
+)
+
+Membership.create!(
+  user_id: user1.id,
+  group_id: group8.id
+)
+
+Membership.create!(
+  user_id: user2.id,
+  group_id: group8.id
+)
+
+Membership.create!(
+  user_id: user3.id,
+  group_id: group7.id
+)
+
+Membership.create!(
+  user_id: user6.id,
+  group_id: group7.id
+)
+
+Membership.create!(
+  user_id: user4.id,
+  group_id: group7.id
+)
+
+Membership.create!(
+  user_id: user3.id,
+  group_id: group6.id
+)
+
+Membership.create!(
+  user_id: user1.id,
+  group_id: group6.id
+)
 
 Membership.create!(
   user_id: user3.id,
@@ -224,6 +285,36 @@ event7 = Event.create!(
   address: "Manhattan Meditation Hall"
 )
 
+event8 = Event.create!(
+  host_id: user1.id,
+  group_id: group8.id,
+  title: "Dream-foiling Roundtabe",
+  details: "Our weekly get-together focuses on brainstorming our evil ways over cocktails, all in a relaxing environment. Bring your master plans to run by the group.",
+  address: "Ursula's Home"
+)
+
+event9 = Event.create!(
+  host_id: user5.id,
+  group_id: group7.id,
+  title: "Dream-foiling Roundtabe",
+  details: "Our weekly get-together focuses on brainstorming our evil ways over cocktails, all in a relaxing environment. Bring your master plans to run by the group.",
+  address: "Ursula's Home"
+)
+
+Rsvp.create!(
+  event_id: event9.id,
+  user_id: user6.id
+)
+
+Rsvp.create!(
+  event_id: event9.id,
+  user_id: user4.id
+)
+
+Rsvp.create!(
+  event_id: event8.id,
+  user_id: user2.id
+)
 Rsvp.create!(
   event_id: event1.id,
   user_id: user1.id
