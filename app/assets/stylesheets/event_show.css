@@ -122,10 +122,11 @@
 }
 
 .main-event-bottom {
-  margin-top: 40px;
+  padding-top: 40px;
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: rgb(247, 247, 247);
 }
 
 .event-bottom-container {
@@ -133,12 +134,13 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  background-color: rgb(247, 247, 247);
 }
 
 .event-bottom-left {
   height: auto;
   width: 694px;
-  background-color: white;
+  background-color: rgb(247, 247, 247);
   display: flex;
   flex-direction: column;
   justify-content: center;
