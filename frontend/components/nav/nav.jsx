@@ -43,7 +43,7 @@ class Nav extends React.Component {
       <div className='navbar'>
   
         <div className='logo-container'>
-          <Link to={'/'} className='logo'>Meet.Sup?</Link>
+          <Link to={'/groups'} className='logo'>Meet.Sup?</Link>
         </div>
   
           <div className="nav-links">
