@@ -33,7 +33,7 @@ class Footer extends React.Component {
           <div className="links-footer">
           <a href="https://www.linkedin.com/in/pdcloeter">
               <i className="fab fa-linkedin"></i> Paul's LinkedIn</a>
-            <a href="https://www.linkedin.com/in/pdcloeter">
+            <a href="https://github.com/pcloeter/">
               <i className="fab fa-github"></i> Paul's GitHub</a>
             <a href="https://pcloeter.github.io">
               <i className="fab fa-product-hunt"></i> Portfolio Site</a>
