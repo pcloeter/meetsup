@@ -114,7 +114,7 @@ class EventIndex extends React.Component {
         <div className="group-event-container">
         <div className="group-event-info">
           <div className="group-event-details">
-            <span id="date">{event.date} {event.time}</span>
+            <span id="date">{event.formattedDate} {event.formattedTime}</span>
             <span id="title">{event.title}</span>
             <span id="address">	&#x261e; {event.address}</span>
           </div>

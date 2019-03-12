@@ -6,6 +6,8 @@ json.event do
     json.attendees @event.attendees
     json.host @event.host
     json.group @event.group
+    json.formattedDate @event.date.strftime("%B %e, %Y")
+    json.formattedTime @event.time.strftime("%l:%M %p")
   end
 end
 

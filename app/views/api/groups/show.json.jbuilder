@@ -15,6 +15,8 @@ json.events do
       json.partial! 'api/events/event', event: event
       json.attendeeIds event.attendee_ids
       json.attendeesCount event.attendees.count
+      json.formattedDate event.date
+      json.formattedTime event.time
     end
   end
 end
