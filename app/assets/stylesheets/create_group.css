@@ -125,6 +125,23 @@
   line-height: 20px;
 }
 
+#form-details {
+  display: block;
+  height: 200px;
+  border-radius: 4px;
+  /* outline: none; */
+  border-style: solid;
+  border-color: gainsboro;
+  border-width: 1px;
+  width: 688px;
+  background-color: #fafafa;
+  margin-bottom: 60px;
+  margin-left: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+}
+
 .create-group-input ul {
   padding-left: 90px;
 }

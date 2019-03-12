@@ -57,7 +57,7 @@ class EventIndex extends React.Component {
   createEventButton () {
     if (this.props.currentUser.id === this.props.organizer.id)  {
       return(
-        <button onClick={() => this.props.history.push('/events/create')}
+        <button onClick={() => this.props.history.push(`/groups/${this.props.group.id}/events/create`)}
         className="membership-join">Create Event</button>
       )
     }
