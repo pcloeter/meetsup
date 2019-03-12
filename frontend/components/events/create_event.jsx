@@ -12,7 +12,6 @@ class CreateEvent extends React.Component {
       details:"",
       date:"",
       time:"",
-      picture_url:"",
       address:"",
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +22,7 @@ class CreateEvent extends React.Component {
     const event = Object.assign({}, this.state);
     debugger
     this.props.createEvent(event).then( event => {
-      this.props.history.push(`events/`);
+      this.props.history.push(`groups/${this.props.group_id}/events/`);
     }
   )}
   
