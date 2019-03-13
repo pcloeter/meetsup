@@ -83,7 +83,6 @@ class EventShow extends React.Component {
   render () {
     if (!this.props.event.host) return null;
     const eventPicId = (this.props.event.id + 5);
-
     const eventAttendees = this.props.event.attendees.map(attendee => {
       return (
           <li key={attendee.id}>

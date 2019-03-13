@@ -15,8 +15,8 @@ json.events do
       json.partial! 'api/events/event', event: event
       json.attendeeIds event.attendee_ids
       json.attendeesCount event.attendees.count
-      json.formattedDate event.date
-      json.formattedTime event.time
+      json.formattedDate event.date.strftime("%B %e, %Y")
+      json.formattedTime event.time.strftime("%l:%M %p")
     end
   end
 end

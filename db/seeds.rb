@@ -238,7 +238,9 @@ event1 = Event.create!(
   group_id: group5.id,
   title: "Gowanus Underworld Explored!",
   details: "Let's explore subterrainian Brooklyn together.  Gowanus...  Sure, it's gross and sketchy, but doesn't that ultimately describe this group on the whole?  Let's do it!",
-  address: "Subway Station - Smith/9th St. (F/G Lines)"
+  address: "Subway Station - Smith/9th St. (F/G Lines)",
+  time: "2000-01-01T18:00:00.000Z",
+  date: "2019-03-31",
 )
 
 event2 = Event.create!(
@@ -247,6 +249,8 @@ event2 = Event.create!(
   title: "Jersey City Sewer System Splunking",
   details: "Jersey City has an underworld all it's own.  Join us for an adventure on the PATH train, followed by an exploration of life under Exchange Place.",
   address: "Exchange Place PATH Station",
+  time: "2000-01-01T08:00:00.000Z",
+  date: "2019-04-29",
 )
 
 event3 = Event.create!(
@@ -254,7 +258,9 @@ event3 = Event.create!(
   group_id: group1.id,
   title: "Pecan Praline Pig-Out!",
   details: "Our upcoming event is going to be overwhelming. We will attempt to alieviate Baskin Robbins of their entire stock of the above mentioned flavor. Please come and help us succeed in this mission.",
-  address: "Port Authority Bus Terminal Baskin Robbins"
+  address: "Port Authority Bus Terminal Baskin Robbins",
+  time: "2000-01-01T13:00:00.000Z",
+  date: "2019-04-28",
 )
 
 event4 = Event.create!(
@@ -262,7 +268,9 @@ event4 = Event.create!(
   group_id: group1.id,
   title: "Coney Island Cone Fest",
   details: "Regardless of the weather, join us for a stroll down the boardwalk at the atmospheric and nostalgic Coney Island. We're going to eat a very large quantity of ice cream cones, and then go home. Seperately.",
-  address: "Coney Island Boardwalk, Queens"
+  address: "Coney Island Boardwalk, Queens",
+  time: "2000-01-01T14:00:00.000Z",
+  date: "2019-05-30",
 )
 
 event5 = Event.create!(
@@ -271,7 +279,9 @@ event5 = Event.create!(
   title: "Prospect Park Run-Around",
   details: "We'll start out in front of the Brooklyn Botanical Gardens (with the goats), and go for a leisurly 3km jog with our friends.
     Feel free to stay and hang afterwards for some peaceful time with the goats.",
-  address: "Brooklyn Botanical Gardens- Main entrance"
+  address: "Brooklyn Botanical Gardens- Main entrance",
+  time: "2000-01-01T13:00:00.000Z",
+  date: "2019-05-31",
 )
 
 event6 = Event.create!(
@@ -279,7 +289,9 @@ event6 = Event.create!(
   group_id: group4.id,
   title: "A Reckless Winter Dip",
   details: "The freezing temperatures can't keep us down-- or out --of our Hudson! Well meet on the pier outside the famous Intrepid Museum.  Join us for a plunge down to Battery Park!",
-  address: "Intrepid Museum- Pier 86, Manhattan"
+  address: "Intrepid Museum- Pier 86, Manhattan",
+  time: "2000-01-01T20:00:00.000Z",
+  date: "2019-05-29",
 )
 
 event7 = Event.create!(
@@ -287,7 +299,9 @@ event7 = Event.create!(
   group_id: group3.id,
   title: "Monday Mindfulness",
   details: "Join us every monday for our extremely popular Monday Mindfulness. During our sessions, we enjoy Deep Alpha compositions to encourage brainwave syncronization, as well as music from the likes of Ravi Shankar and others.",
-  address: "Manhattan Meditation Hall"
+  address: "Manhattan Meditation Hall",
+  time: "2000-01-01T18:00:00.000Z",
+  date: "2019-04-24",
 )
 
 event8 = Event.create!(
@@ -295,7 +309,9 @@ event8 = Event.create!(
   group_id: group8.id,
   title: "Dream-foiling Roundtabe",
   details: "Our weekly get-together focuses on brainstorming our evil ways over cocktails, all in a relaxing environment. Bring your master plans to run by the group.",
-  address: "Ursula's Home"
+  address: "Ursula's Home",
+  time: "2000-01-01T08:00:00.000Z",
+  date: "2019-05-26",
 )
 
 event9 = Event.create!(
@@ -303,7 +319,9 @@ event9 = Event.create!(
   group_id: group7.id,
   title: "Bring Up the Lights Fridays",
   details: "Let's shut it down. Every Friday night we shoot out a text letting you know where we'll start. Dress to make an impresssss....sion. If you can't bring up the lights with us. You're out of the group. Can you handle it?",
-  address: "TBA"
+  address: "TBA",
+  time: "2000-01-01T23:00:00.000Z",
+  date: "2019-06-30",
 )
 
 Rsvp.create!(
