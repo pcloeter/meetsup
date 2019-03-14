@@ -31,9 +31,18 @@ class GroupIndex extends React.Component {
 
     return (
       <div className="main-groups-container">
-        <div className="find-banner">
-          <h1 className="find-title">Find a Meet.Sup?</h1>
-        </div>
+      <div className="find-banner">
+        <h1 className="find-title">Find an Upcoming Event!</h1>
+      </div>
+      <div className="banner-mid-container">
+      <div className="banner-nav-banner">
+      <div className="banner-search"></div>
+      <div className="banner-buttons">
+        <a href=""><div className="cal-button">Groups</div></a>
+        <a href="#/events/"><div className="groups-button">Calendar</div></a>
+      </div>
+      </div>
+      </div>
 
         <div className="groups-section">
         <h4 className="suggested">SUGGESTED MEETUPS</h4>

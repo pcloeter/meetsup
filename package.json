@@ -8,6 +8,8 @@
     "babel-loader": "^8.0.5",
     "lodash": "^4.17.11",
     "react": "^16.7.0",
+    "react-datepicker": "^2.1.0",
+    "react-day-picker": "^7.3.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
@@ -17,6 +19,7 @@
     "webpack-cli": "^3.2.1"
   },
   "devDependencies": {
+    "css-loader": "^2.1.1",
     "redux-logger": "^3.0.6"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
