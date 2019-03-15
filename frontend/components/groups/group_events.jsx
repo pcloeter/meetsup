@@ -39,7 +39,10 @@ class GroupEvents extends React.Component {
   }
 
   handleMonthChange(date) {
-    this.setState({ month: this.months[date.getMonth()] });
+    this.setState({ 
+      month: this.months[date.getMonth()],
+      selectedDay: undefined 
+    });
   }
 
   handleDayClick(day, { selected }) {
@@ -53,10 +56,21 @@ class GroupEvents extends React.Component {
 
   whichEvents() {
     if (!this.state.selectedDay) {
+      debugger
       const displayEvents = this.props.events.filter (event => Boolean(event.formattedDate.includes(this.state.month)));
       return displayEvents;
-    } else {
+    } else if (this.state.selectedDay) {
+      debugger
+      const selectedDay = this.state.selectedDay.getDate().toString();
+      const selectedMonth = this.months[this.state.selectedDay.getMonth()];
 
+      const displayEvents = this.props.events.filter ( event => {
+       return Boolean(event.formattedDate.includes(selectedDay) && event.formattedDate.includes(selectedMonth));
+      })
+      return displayEvents;
+    } else {
+      debugger
+      return 0;
     }
   } 
 
