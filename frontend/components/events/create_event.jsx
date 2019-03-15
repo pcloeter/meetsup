@@ -20,7 +20,6 @@ class CreateEvent extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const event = Object.assign({}, this.state);
-    debugger
     this.props.createEvent(event).then( event => {
       this.props.history.push(`/groups/${this.props.group_id}/events/`);
     }

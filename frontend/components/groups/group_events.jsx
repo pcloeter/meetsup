@@ -56,11 +56,9 @@ class GroupEvents extends React.Component {
 
   whichEvents() {
     if (!this.state.selectedDay) {
-      debugger
       const displayEvents = this.props.events.filter (event => Boolean(event.formattedDate.includes(this.state.month)));
       return displayEvents;
     } else if (this.state.selectedDay) {
-      debugger
       const selectedDay = this.state.selectedDay.getDate().toString();
       const selectedMonth = this.months[this.state.selectedDay.getMonth()];
 
@@ -69,7 +67,6 @@ class GroupEvents extends React.Component {
       })
       return displayEvents;
     } else {
-      debugger
       return 0;
     }
   } 
