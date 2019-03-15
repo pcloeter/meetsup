@@ -1,5 +1,4 @@
 import React from "react";
-import DatePicker from "react-datepicker";
 import DayPicker from 'react-day-picker';
 
 
@@ -7,23 +6,25 @@ class GroupEvents extends React.Component {
   constructor (props) {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
+    this.whichEvents = this.whichEvents.bind(this);
+    this.handleMonthChange = this.handleMonthChange.bind(this);
     this.today = new Date();
-      const months = new Array();
-      months[0] = "January";
-      months[1] = "February";
-      months[2] = "March";
-      months[3] = "April";
-      months[4] = "May";
-      months[5] = "June";
-      months[6] = "July";
-      months[7] = "August";
-      months[8] = "September";
-      months[9] = "October";
-      months[10] = "November";
-      months[11] = "December";
-    this.month = months[this.today.getMonth()];
+    this.months = new Array();
+      this.months[0] = "January";
+      this.months[1] = "February";
+      this.months[2] = "March";
+      this.months[3] = "April";
+      this.months[4] = "May";
+      this.months[5] = "June";
+      this.months[6] = "July";
+      this.months[7] = "August";
+      this.months[8] = "September";
+      this.months[9] = "October";
+      this.months[10] = "November";
+      this.months[11] = "December";
+    this.month = this.months[this.today.getMonth()];
     this.state = {
-      month: this.today.getMonth(),
+      month: this.month,
       selectedDay: undefined,
     };
   }
@@ -32,11 +33,13 @@ class GroupEvents extends React.Component {
     this.props.fetchEvents()
   }
 
-  onMonthChange() {
-    this.setState({ month: undefined });
+  handleMonthChange(date) {
+    debugger
+    this.setState({ month: this.months[date.getMonth()] });
   }
 
   handleDayClick(day, { selected }) {
+    debugger
     if (selected) {
       // Unselect the day if already selected
       this.setState({ selectedDay: undefined });
@@ -46,12 +49,17 @@ class GroupEvents extends React.Component {
   }
 
   whichEvents() {
+    if (!this.state.selectedDay) {
+      const displayEvents = this.props.events.filter (event => Boolean(event.formattedDate.includes(this.state.month)));
+      return displayEvents;
+    } else {
 
-  }
+    }
+  } 
 
   eventIndexShow () {
     if (!this.props.events) { return null };
-    if (!this.props.events.count) {
+    if (!this.whichEvents()) {
       return <li id="noEvents">No events scheduled! :-( </li>
         
       } else {
@@ -105,6 +113,7 @@ class GroupEvents extends React.Component {
       <div className="calendar">
       <div>
         <DayPicker 
+          onMonthChange={this.handleMonthChange}
           onDayClick={this.handleDayClick}
           selectedDays={this.state.selectedDay}
         />
