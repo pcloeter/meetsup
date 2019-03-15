@@ -57,24 +57,28 @@ class GroupEvents extends React.Component {
   whichEvents() {
     if (!this.state.selectedDay) {
       const displayEvents = this.props.events.filter (event => Boolean(event.formattedDate.includes(this.state.month)));
-      return displayEvents;
+      return displayEvents.reverse();
     } else if (this.state.selectedDay) {
       const selectedDay = this.state.selectedDay.getDate().toString();
       const selectedMonth = this.months[this.state.selectedDay.getMonth()];
-
+      
       const displayEvents = this.props.events.filter ( event => {
-       return Boolean(event.formattedDate.includes(selectedDay) && event.formattedDate.includes(selectedMonth));
+        const dateLength = event.formattedDate.length;
+        const firstDigit = event.formattedDate[dateLength - 8];
+        const secondDigit = event.formattedDate[dateLength - 7];
+        const dateDigits = firstDigit.concat(secondDigit);
+        return Boolean((dateDigits === selectedDay) && event.formattedDate.includes(selectedMonth));
       })
       return displayEvents;
     } else {
-      return 0;
+      return [];
     }
   } 
-
+  
   eventIndexShow () {
     if (!this.props.events) { return null };
-    if (!this.whichEvents()) {
-      return <li id="noEvents">No events scheduled! :-( </li>
+    if (this.whichEvents().length === 0) {
+      return <li id="no-events">No events scheduled! :-( </li>
         
       } else {
         const eventItems = this.whichEvents().map( event => {
