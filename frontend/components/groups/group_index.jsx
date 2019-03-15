@@ -32,7 +32,7 @@ class GroupIndex extends React.Component {
     return (
       <div className="main-groups-container">
       <div className="find-banner">
-        <h1 className="find-title">Find an Upcoming Event!</h1>
+        <h1 className="find-title">Find a Meet.Sup?</h1>
       </div>
       <div className="banner-mid-container">
       <div className="banner-nav-banner">

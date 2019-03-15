@@ -5,6 +5,7 @@ import DayPicker from 'react-day-picker';
 class GroupEvents extends React.Component {
   constructor (props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.whichEvents = this.whichEvents.bind(this);
     this.handleMonthChange = this.handleMonthChange.bind(this);
@@ -33,13 +34,15 @@ class GroupEvents extends React.Component {
     this.props.fetchEvents()
   }
 
+  handleClick(groupId) {
+    return () => this.props.history.push(`/groups/${groupId}`)
+  }
+
   handleMonthChange(date) {
-    debugger
     this.setState({ month: this.months[date.getMonth()] });
   }
 
   handleDayClick(day, { selected }) {
-    debugger
     if (selected) {
       // Unselect the day if already selected
       this.setState({ selectedDay: undefined });
@@ -64,18 +67,21 @@ class GroupEvents extends React.Component {
         
       } else {
         const eventItems = this.whichEvents().map( event => {
-
         return(
-        <li className="group-events-show" key={event.id}>
+        <li id="event-list" className="group-events-show" 
+          key={event.id}
+          onClick={this.handleClick(event.group_id)}
+          >
         <div className="group-event-container">
         <div className="group-event-info">
           <div className="group-event-details">
             <span id="date">{event.formattedDate} {event.formattedTime}</span>
+            <h4 className="events-group">{event.group.name}</h4>
             <span id="title">{event.title}</span>
-            <span id="address">	&#x261e; {event.address}</span>
+            <span id="address">{event.attendeesCount} {event.group.name} Members Going</span>
           </div>
         </div>
-        <p id="group-event-description">{event.details}</p>
+        {/* <p id="group-event-description">{event.details}</p> */}
         </div>
         </li>
         )
