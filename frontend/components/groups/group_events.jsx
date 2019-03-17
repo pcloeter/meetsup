@@ -82,6 +82,7 @@ class GroupEvents extends React.Component {
         
       } else {
         const eventItems = this.whichEvents().map( event => {
+        const groupName = (!event.group) ? null : event.group.name
         return(
         <li id="event-list" className="group-events-show" 
           key={event.id}
@@ -91,9 +92,9 @@ class GroupEvents extends React.Component {
         <div className="group-event-info">
           <div className="group-event-details">
             <span id="date">{event.formattedDate} {event.formattedTime}</span>
-            <h4 className="events-group">{event.group.name}</h4>
+            <h4 className="events-group">{groupName}</h4>
             <span id="title">{event.title}</span>
-            <span id="address">{event.attendeesCount} {event.group.name} Members Going</span>
+            <span id="address">{event.attendeesCount} {groupName} Members Going</span>
           </div>
         </div>
         {/* <p id="group-event-description">{event.details}</p> */}
