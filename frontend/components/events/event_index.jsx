@@ -106,9 +106,16 @@ class EventIndex extends React.Component {
       return <li id="noEvents">{this.props.group.name} has no events scheduled! :-( </li>
         
     } else {
-      const eventItems = this.props.events.map( event => {
+      const dateDay = (event) => parseInt(event.date.slice(8));
+      const dateMonth = (event) => parseInt(event.date.slice(5, 7));
+      let eventItems = this.props.events.sort((a, b) => dateMonth(a) - dateMonth(b));
+      
+      eventItems = eventItems.sort((a, b) => {
+          if (dateMonth(a) === dateMonth(b)) { return dateDay(a) - dateDay(b)}
+        })
+        
+      eventItems = eventItems.map( event => {
       const eventPicId = (event.id + 5);
-
       return(
         <li className="group-events-show" key={event.id}>
         <div className="group-event-container">
