@@ -105,11 +105,11 @@ class EventIndex extends React.Component {
     if (this.props.group.eventsCount === 0 ) {
       return <li id="noEvents">{this.props.group.name} has no events scheduled! :-( </li>
         
-      } else {
-        const eventItems = this.props.events.map( event => {
-          const eventPicId = (event.id + 5);
+    } else {
+      const eventItems = this.props.events.map( event => {
+      const eventPicId = (event.id + 5);
 
-        return(
+      return(
         <li className="group-events-show" key={event.id}>
         <div className="group-event-container">
         <div className="group-event-info">
@@ -132,7 +132,7 @@ class EventIndex extends React.Component {
         </li>
         )
       })
-      return eventItems;
+    return eventItems;
     }
   };
 
@@ -141,14 +141,7 @@ class EventIndex extends React.Component {
     if (!this.props.group) { return null };
 
     const groupId = this.props.group.id;
-    const groupMembers = this.props.members.map(member => {
-      return (
-          <li key={member.id}>
-            <img src="https://image.flaticon.com/icons/png/128/149/149072.png"/>
-            <p>{member.name}</p>
-          </li>
-      )
-    });
+
     return (
       <div>
 

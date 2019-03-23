@@ -55,9 +55,11 @@ class GroupEvents extends React.Component {
   }
 
   whichEvents() {
+    const dateDay = (event) => parseInt(event.date.slice(8));
     if (!this.state.selectedDay) {
-      const displayEvents = this.props.events.filter (event => Boolean(event.formattedDate.includes(this.state.month)));
-      return displayEvents.reverse();
+      let displayEvents = this.props.events.filter (event => Boolean(event.formattedDate.includes(this.state.month)));
+      displayEvents = displayEvents.sort((a, b) => dateDay(a) - dateDay(b));
+      return displayEvents
     } else if (this.state.selectedDay) {
       const selectedDay = this.state.selectedDay.getDate().toString();
       const selectedMonth = this.months[this.state.selectedDay.getMonth()];
@@ -69,7 +71,7 @@ class GroupEvents extends React.Component {
         const dateDigits = firstDigit.concat(secondDigit);
         return Boolean((dateDigits === selectedDay) && event.formattedDate.includes(selectedMonth));
       })
-      return displayEvents;
+      return displayEvents
     } else {
       return [];
     }
@@ -83,6 +85,7 @@ class GroupEvents extends React.Component {
       } else {
         const eventItems = this.whichEvents().map( event => {
         const groupName = (!event.group) ? null : event.group.name
+        
         return(
         <li id="event-list" className="group-events-show" 
           key={event.id}
